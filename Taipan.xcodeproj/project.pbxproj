@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		2A3358DB26C9CF79003BC9D2 /* Taipan.woff2 in Copy  Taipan Fonts */ = {isa = PBXBuildFile; fileRef = 2A3358CD26C9CF3C003BC9D2 /* Taipan.woff2 */; };
 		2A3358DC26C9CF79003BC9D2 /* MegaMicro.woff2 in Copy  Taipan Fonts */ = {isa = PBXBuildFile; fileRef = 2A3358CE26C9CF3C003BC9D2 /* MegaMicro.woff2 */; };
 		2A7CB15526CA79B400B1A97B /* Taipan_DE.html in Copy Taipan Files */ = {isa = PBXBuildFile; fileRef = 2A7CB15226CA79AC00B1A97B /* Taipan_DE.html */; };
+		2A7CB16226CAE05B00B1A97B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7CB16126CAE05B00B1A97B /* Sparkle */; };
 		E5FE085A1DDDACB100DB19B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */; };
 		E5FE085C1DDDACB100DB19B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE085B1DDDACB100DB19B9 /* ViewController.swift */; };
 		E5FE085E1DDDACB100DB19B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5FE085D1DDDACB100DB19B9 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7CB16226CAE05B00B1A97B /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 			dependencies = (
 			);
 			name = Taipan;
+			packageProductDependencies = (
+				2A7CB16126CAE05B00B1A97B /* Sparkle */,
+			);
 			productName = WKWebView;
 			productReference = E5FE08561DDDACB100DB19B9 /* Taipan.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +178,9 @@
 				Base,
 			);
 			mainGroup = E5FE084D1DDDACB100DB19B9;
+			packageReferences = (
+				2A7CB16026CAE05B00B1A97B /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = E5FE08571DDDACB100DB19B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -417,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A7CB16026CAE05B00B1A97B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A7CB16126CAE05B00B1A97B /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A7CB16026CAE05B00B1A97B /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5FE084E1DDDACB100DB19B9 /* Project object */;
 }
