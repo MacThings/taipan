@@ -1,9 +1,5 @@
 //
-//  ViewController.swift
-//  WKWebView
-//
-//  Created by Marco Barnig on 17/11/2016.
-//  Copyright © 2016 Marco Barnig. All rights reserved.
+//  Copyright © 2021 Sascha Lamprecht. All rights reserved.
 //
 
 import Cocoa
@@ -29,20 +25,10 @@ class ViewController: NSViewController {
             UserDefaults.standard.set("English", forKey: "Language")
         }
     }
-
-    
-    
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
     
     @IBAction func start_game(_ sender: Any) {
         title_picture.isHidden = true
         start_button.title = NSLocalizedString("Restart game", comment: "")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.start_game])
     }
-    
-
 }

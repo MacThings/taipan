@@ -1,0 +1,99 @@
+/* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Taipan";
+
+/* Class = "NSMenuItem"; title = "Quit Taipan"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Taipan beenden";
+
+/* Class = "NSMenuItem"; title = "About Taipan"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über Taipan";
+
+/* Class = "NSMenuItem"; title = "2x"; ObjectID = "6Rf-Po-JSw"; */
+"6Rf-Po-JSw.title" = "2x";
+
+/* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "9dp-9n-b1u"; */
+"9dp-9n-b1u.title" = "Taipan";
+
+/* Class = "NSMenuItem"; title = "4x"; ObjectID = "9G9-tn-Fyy"; */
+"9G9-tn-Fyy.title" = "4x";
+
+/* Class = "NSMenuItem"; title = "Traditional"; ObjectID = "aeW-VW-Ln2"; */
+"aeW-VW-Ln2.title" = "Traditionell";
+
+/* Class = "NSMenuItem"; title = "English"; ObjectID = "atf-5b-ElM"; */
+"atf-5b-ElM.title" = "Englisch";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Window";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Hauptmenu";
+
+/* Class = "NSViewController"; title = "Taipan"; ObjectID = "bwg-dZ-Rat"; */
+"bwg-dZ-Rat.title" = "Taipan";
+
+/* Class = "NSTextFieldCell"; title = "Language"; ObjectID = "Bxo-hi-3wX"; */
+"Bxo-hi-3wX.title" = "Sprache";
+
+/* Class = "NSButtonCell"; title = "Start game"; ObjectID = "Dfn-p7-c8P"; */
+"Dfn-p7-c8P.title" = "Starte Spiel";
+
+/* Class = "NSTextFieldCell"; title = "A game based on the China trade of the 1800s"; ObjectID = "eCb-kK-4F3"; */
+"eCb-kK-4F3.title" = "Basierend auf chinesischem Handel im 18. Jh.";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "fAc-Z1-9D3"; */
+"fAc-Z1-9D3.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Hide Taipan"; ObjectID = "hik-eQ-gnC"; */
+"hik-eQ-gnC.title" = "Taipan ausblenden";
+
+/* Class = "NSWindow"; title = "Taipan"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Taipan";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Alle einblenden";
+
+/* Class = "NSMenuItem"; title = "3x"; ObjectID = "kMs-Ha-SvE"; */
+"kMs-Ha-SvE.title" = "3x";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "L5H-67-SvN"; */
+"L5H-67-SvN.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Alle nach vorne holen";
+
+/* Class = "NSMenuItem"; title = "5x"; ObjectID = "Msb-dH-5M1"; */
+"Msb-dH-5M1.title" = "5x";
+
+/* Class = "NSMenuItem"; title = "System"; ObjectID = "Nz1-XS-eLR"; */
+"Nz1-XS-eLR.title" = "System";
+
+/* Class = "NSMenuItem"; title = "Check for updates ..."; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Auf Updates prüfen ...";
+
+/* Class = "NSTextFieldCell"; title = "Game speed"; ObjectID = "ouf-Oy-Luu"; */
+"ouf-Oy-Luu.title" = "Geschwindigkeit";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimieren";
+
+/* Class = "NSTextFieldCell"; title = "Taipan"; ObjectID = "pp8-ri-qI3"; */
+"pp8-ri-qI3.title" = "Taipan";
+
+/* Class = "NSTextFieldCell"; title = "Font"; ObjectID = "QWq-qr-6nx"; */
+"QWq-qr-6nx.title" = "Schriftart";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Fenster";
+
+/* Class = "NSMenu"; title = "Taipan"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Taipan";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Andere ausblenden";
+
+/* Class = "NSMenuItem"; title = "German"; ObjectID = "vtJ-2p-Eaf"; */
+"vtJ-2p-Eaf.title" = "Deutsch";
+
+/* Class = "NSViewController"; title = "Taipan"; ObjectID = "XfG-lQ-9wD"; */
+"XfG-lQ-9wD.title" = "Taipan";
+

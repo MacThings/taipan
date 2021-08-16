@@ -13,6 +13,8 @@
 		2A3358DC26C9CF79003BC9D2 /* MegaMicro.woff2 in Copy  Taipan Fonts */ = {isa = PBXBuildFile; fileRef = 2A3358CE26C9CF3C003BC9D2 /* MegaMicro.woff2 */; };
 		2A7CB15526CA79B400B1A97B /* Taipan_DE.html in Copy Taipan Files */ = {isa = PBXBuildFile; fileRef = 2A7CB15226CA79AC00B1A97B /* Taipan_DE.html */; };
 		2A7CB16226CAE05B00B1A97B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7CB16126CAE05B00B1A97B /* Sparkle */; };
+		2A7CB16826CAE42900B1A97B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB16626CAE42900B1A97B /* InfoPlist.strings */; };
+		2A7CB16B26CAE42900B1A97B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB16926CAE42900B1A97B /* Localizable.strings */; };
 		E5FE085A1DDDACB100DB19B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */; };
 		E5FE085C1DDDACB100DB19B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE085B1DDDACB100DB19B9 /* ViewController.swift */; };
 		E5FE085E1DDDACB100DB19B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5FE085D1DDDACB100DB19B9 /* Assets.xcassets */; };
@@ -55,6 +57,9 @@
 		2A3358CE26C9CF3C003BC9D2 /* MegaMicro.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MegaMicro.woff2; sourceTree = "<group>"; };
 		2A7CB15226CA79AC00B1A97B /* Taipan_DE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Taipan_DE.html; sourceTree = "<group>"; };
 		2A7CB15C26CADFFD00B1A97B /* taipan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = taipan.html; sourceTree = "<group>"; };
+		2A7CB16526CAE33500B1A97B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		2A7CB16726CAE42900B1A97B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A7CB16A26CAE42900B1A97B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5FE08561DDDACB100DB19B9 /* Taipan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taipan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5FE085B1DDDACB100DB19B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +127,8 @@
 				E5FE085D1DDDACB100DB19B9 /* Assets.xcassets */,
 				E5FE085F1DDDACB100DB19B9 /* Main.storyboard */,
 				E5FE08621DDDACB100DB19B9 /* Info.plist */,
+				2A7CB16926CAE42900B1A97B /* Localizable.strings */,
+				2A7CB16626CAE42900B1A97B /* InfoPlist.strings */,
 				2A7CB15C26CADFFD00B1A97B /* taipan.html */,
 			);
 			path = Taipan;
@@ -176,6 +183,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = E5FE084D1DDDACB100DB19B9;
 			packageReferences = (
@@ -196,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5FE085E1DDDACB100DB19B9 /* Assets.xcassets in Resources */,
+				2A7CB16B26CAE42900B1A97B /* Localizable.strings in Resources */,
+				2A7CB16826CAE42900B1A97B /* InfoPlist.strings in Resources */,
 				E5FE08611DDDACB100DB19B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,10 +247,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2A7CB16626CAE42900B1A97B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7CB16726CAE42900B1A97B /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A7CB16926CAE42900B1A97B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7CB16A26CAE42900B1A97B /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E5FE085F1DDDACB100DB19B9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E5FE08601DDDACB100DB19B9 /* Base */,
+				2A7CB16526CAE33500B1A97B /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

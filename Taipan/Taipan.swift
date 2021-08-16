@@ -1,9 +1,5 @@
 //
-//  WebViewController.swift
-//  WKWebView
-//
-//  Created by Marco Barnig on 17/11/2016.
-//  Copyright © 2016 Marco Barnig. All rights reserved.
+//  Copyright © 2021 Sascha Lamprecht. All rights reserved.
 //
 
 import Cocoa
@@ -83,7 +79,6 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         let myRequest = URLRequest(url: myURL!)
         myWebView.load(myRequest)
     }
-    
     
     func shell(cmd: String) {
         let process            = Process()

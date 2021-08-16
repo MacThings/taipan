@@ -174,7 +174,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-c4-3T4">
-                                            <rect key="frame" x="6" y="27" width="293" height="47"/>
+                                            <rect key="frame" x="3" y="27" width="293" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Taipan" id="pp8-ri-qI3">
                                                 <font key="font" metaFont="system" size="40"/>
@@ -183,7 +183,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8kI-5Z-bk7">
-                                            <rect key="frame" x="8" y="10" width="291" height="16"/>
+                                            <rect key="frame" x="4" y="10" width="291" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="A game based on the China trade of the 1800s" id="eCb-kK-4F3">
                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -192,12 +192,12 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXF-Vz-pWq">
-                                            <rect key="frame" x="550" y="8" width="85" height="64"/>
+                                            <rect key="frame" x="544" y="8" width="85" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Ship" id="DPZ-iF-Dwx"/>
                                         </imageView>
                                         <popUpButton focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTw-RF-NV5">
-                                            <rect key="frame" x="300" y="7" width="110" height="23"/>
+                                            <rect key="frame" x="297" y="7" width="110" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="roundTextured" title="English" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="atf-5b-ElM" id="Ego-3p-MgD">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -214,7 +214,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4L-7a-hQZ">
-                                            <rect key="frame" x="303" y="27" width="56" height="14"/>
+                                            <rect key="frame" x="300" y="27" width="96" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Language" id="Bxo-hi-3wX">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -223,7 +223,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gux-Wy-gy5">
-                                            <rect key="frame" x="432" y="40" width="104" height="20"/>
+                                            <rect key="frame" x="429" y="40" width="104" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="roundTextured" title="Traditional" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="aeW-VW-Ln2" id="o3e-el-quf">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -243,7 +243,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gqq-UC-GBw">
-                                            <rect key="frame" x="434" y="59" width="70" height="14"/>
+                                            <rect key="frame" x="431" y="59" width="104" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Game speed" id="ouf-Oy-Luu">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -252,7 +252,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jby-IH-lWq">
-                                            <rect key="frame" x="303" y="59" width="28" height="14"/>
+                                            <rect key="frame" x="300" y="59" width="109" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Font" id="QWq-qr-6nx">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -261,7 +261,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRa-Rd-hqV">
-                                            <rect key="frame" x="300" y="39" width="110" height="23"/>
+                                            <rect key="frame" x="297" y="39" width="110" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="roundTextured" title="Taipan" bezelStyle="texturedRounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="9dp-9n-b1u" id="sCf-4E-JAN">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -278,7 +278,7 @@
                                             </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-3h-P7C">
-                                            <rect key="frame" x="427" y="2" width="114" height="30"/>
+                                            <rect key="frame" x="424" y="2" width="114" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Start game" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dfn-p7-c8P">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

@@ -1,15 +1,9 @@
 //
-//  AppDelegate.swift
-//  WKWebView
-//
-//  Created by Marco Barnig on 17/11/2016.
-//  Copyright © 2016 Marco Barnig. All rights reserved.
+//  Copyright © 2021 Sascha Lamprecht. All rights reserved.
 //
 
 import Cocoa
-
-   
-    
+     
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -23,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
-    }  // end func
+    }
     
-}  // end class
+}
 

@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "Taipan";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2021 Sascha Lamprecht. All rights reserved.";
+
