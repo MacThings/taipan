@@ -331,7 +331,7 @@ case "NEWSHIP2":
 if(input[2]=="Y"){CA-=SP;MW+=50;SC+=50;DM=0;fRP();}goto="R-NEWSHIP";delay=2;break;
 case "NEWGUN1":
 allow=[1,"NEWGUN2","Y","N"];
-elements["message"].innerHTML=comp$+'<span class="cap">D</span>o you wish to buy a ship\'s gun<br/>for '+fnFC(SP)+', '+t$+'? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du eine Schiffskanone<br/>für '+fnFC(SP)+', kaufen '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "NEWGUN2":
 if(input[2]=="Y"&&MW>=10){CA-=SP;GN+=1;MW-=10;fRP();delay=2;goto="R-NEWGUN";}else if(input[2]=="Y"){
@@ -453,23 +453,23 @@ case 5000:
 LC=0;OK=3;IK=1;S0=SN;BT=fR(TI/4*1000*Mp(SN,1.05))+fR(1000)+250;SS=0;for(var i=0;i<10;i++){AM[i][0]=0;}
 elements["SN"].innerHTML=SN;elements["GNs"].innerHTML=GN;
 elements["S4"].style.display="none";elements["S5"].style.display="block";
-elements["f2"].innerHTML='<span class="cap">Deine</span>Anweisung lautet: <span id="input"></span><span id="cursor">_</span>';
+elements["f2"].innerHTML='<span class="cap">D</span>eine Anweisung lautet: <span id="input"></span><span id="cursor">_</span>';
 case 5060:
 WW=100-Mf(DM/SC*100);elements["f4"].innerHTML='<span class="cap">A</span>ktuelle Seetüchtigkeit: &nbsp;'+sstatus[Mf(WW/20)]+' ('+WW+'%)';
 case 5100:
 fnAddShips();
 //elements["SN"].innerHTML is SA
 //allow=false;get=[1,5160,"F","R","F"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
-allow=false;get=[1,5160,"F","R"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
+allow=false;get=[1,5160,"A","F"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
 case 5160:
-LC=input[2];if(LC=='F'){CMD='<span class="cap">F</span>ight';}else if(LC=='R'){CMD='<span class="cap">R</span>un';}else{CMD='<span class="cap">T</span>hrow cargo';}
-elements["f2"].innerHTML='<span class="cap">Y</span>our orders are to: '+CMD;
+LC=input[2];if(LC=='A'){CMD='<span class="cap">A</span>ngreifen';}else if(LC=='F'){CMD='<span class="cap">F</span>lüchten';}else{CMD='<span class="cap">F</span>racht über Bord werfen';}
+elements["f2"].innerHTML='<span class="cap">D</span>ein Befehl lautet: '+CMD;
 case 5190:
-if(LC=='R'){goto=5200;}else if(LC=='F'){goto=5300;}else if(LC=='T'){goto=5400;}
+if(LC=='F'){goto=5200;}else if(LC=='A'){goto=5300;}else if(LC=='T'){goto=5400;}
 //else{elements["f4"].innerHTML=t$+', what shall we do?? (Fight, Run, Throw cargo)';}delay=0;break;
-else{elements["f4"].innerHTML=t$+', was sollen wir tun?? (Fight, Run)';}delay=0;break;
+else{elements["f4"].innerHTML=t$+', was sollen wir tun?? (Angreifen, Flüchten)';}delay=0;break;
 case 5200:
-get=false;elements["f4"].innerHTML='<span class="cap">A</span>ye, we\'ll run, '+t$+'!';fnKeyInput();delay=4;goto=5210;break;
+get=false;elements["f4"].innerHTML='<span class="cap">A</span>ye, wir flüchten, '+t$+'!';fnKeyInput();delay=4;goto=5210;break;
 case 5210:
 OK+=IK++;if(fR(OK)>fR(SN)){OK=3;elements["f4"].innerHTML='<span class="cap">W</span>e got away from \'em, '+t$+'!!';fnKeyInput();delay=4;goto=5900;break;}
 case 5220:
@@ -519,7 +519,7 @@ fnKeyInput();delay=0;goto=5060;break;
 case 5800:
 elements["SN"].innerHTML=SN;delay=2;goto=5320;break;
 case 5900:
-if(LC=='F'){CA+=BT;elements["message"].innerHTML='<br /><br /><span class="cap">W</span>e\'ve captured some booty.<br />It\'s worth '+fnFC(BT)+'!';}else
+if(LC=='A'){CA+=BT;elements["message"].innerHTML='<br /><br /><span class="cap">W</span>e\'ve captured some booty.<br />It\'s worth '+fnFC(BT)+'!';}else
 {elements["message"].innerHTML='<br /><br /><span class="cap">W</span>e made it, '+t$+'!';}
 fRP();elements["S5"].style.display="none";elements["S4"].style.display="block";
 get=false;fnKeyInput();delay=10;goto=3300;break;
@@ -692,7 +692,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 		<br /><br />
 		<span class="cap">S</span>chiffsgröße: <span id="SCf">0</span> Einheiten mit <span id="GNf">0</span> Kanonen
 		<br /><br />
-		<span class="cap">D</span>hast <span id="YEARSf">0</span> gehandelt und <span id="MONTHSf">0</span>
+		<span class="cap">D</span>u hast <span id="YEARSf">0</span> und <span id="MONTHSf">0</span> gehandelt
 		<br /><br />
 		<span class="inverse"><span class="cap">D</span>eine Punktzahl ist <span id="SCOREf">0</span>.</span>
 		<br /><br /><br /><br />
