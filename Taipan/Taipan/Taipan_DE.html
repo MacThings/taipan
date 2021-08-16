@@ -239,17 +239,17 @@ if(LO!=1){goto=1500;delay=0;break;}
 if(LI==0&&CA>0){
 WW=0;var W=1.8;if(TI>12){WW=fR(1000*TI)+1000*TI;W=1;}LI$=fR(CA/W)+WW;
 elements["message"].innerHTML=comp$+'<span class="cap">L</span>i <span class="cap">Y</span>uen erbittet '+fnFC(LI$)+' als Spende an den Tempel von<br /><span class="cap">T</span>in <span class="cap">H</span>au, die <span class="cap">M</span>eeresgöttin. <span class="cap">M</span>öchtest du bezahlen? <span id="input"></span><span id="cursor">_</span>';
-allow=[1,1060,"Y","N"];fnKeyInput();break;}
+allow=[1,1060,"J","N"];fnKeyInput();break;}
 case 1060:
-if(line==1060&&input[2]=="Y"){CA-=LI$;if(CA>=0){LI=1;elements["CA"].innerHTML=fnFC(CA);}else
+if(line==1060&&input[2]=="J"){CA-=LI$;if(CA>=0){LI=1;elements["CA"].innerHTML=fnFC(CA);}else
 {elements["message"].innerHTML=comp$+t$+', you do not have enough cash!!<br /><br /><span class="cap">D</span>o you want <span class="cap">E</span>lder <span class="cap">B</span>rother <span class="cap">W</span>u to make up<br />the difference for you? <span id="input"></span><span id="cursor">_</span>';
-allow=[1,1080,"Y","N"];fnKeyInput();break;}}
+allow=[1,1080,"J","N"];fnKeyInput();break;}}
 case 1080:
-if(line==1080){if(input[2]=="Y"){DW-=CA;LI=1;elements["message"].innerHTML=comp$+'<span class="cap">E</span>lder <span class="cap">B</span>rother has given <span class="cap">L</span>i <span class="cap">Y</span>uen the <br />difference between what he wanted and<br />your cash on hand and added the same<br />amount to your debt.';elements["DW"].innerHTML=fnFC(DW);
+if(line==1080){if(input[2]=="J"){DW-=CA;LI=1;elements["message"].innerHTML=comp$+'<span class="cap">E</span>lder <span class="cap">B</span>rother has given <span class="cap">L</span>i <span class="cap">Y</span>uen the <br />difference between what he wanted and<br />your cash on hand and added the same<br />amount to your debt.';elements["DW"].innerHTML=fnFC(DW);
 }else{elements["message"].innerHTML=comp$+'<span class="cap">V</span>ery well. <span class="cap">E</span>lder <span class="cap">B</span>rother <span class="cap">W</span>u will not pay<br /><span class="cap">L</span>i <span class="cap">Y</span>uen the difference. <span class="cap">I</span> would be very<br />wary of pirates if <span class="cap">I</span> were you, '+t$+'.';
 }CA=0;elements["CA"].innerHTML=fnFC(CA);fnKeyInput();delay=10;goto=1120;break;}
 case 1120:
-if(LO==1&&DM>0){elements["message"].innerHTML=comp$+t$+', <span class="cap">M</span>c <span class="cap">H</span>enry from the <span class="cap">H</span>ong <span class="cap">K</span>ong<br /><span class="cap">S</span>hipyards has arrived! <span class="cap">H</span>e says, \'I see<br />ye\'ve a wee bit of damage to yer ship.<br /><span class="cap">W</span>ill ye be wanting repairs?\' <span id="input"></span><span id="cursor">_</span>';allow=[1,1130,"Y","N"];fnKeyInput();break;}
+if(LO==1&&DM>0){elements["message"].innerHTML=comp$+t$+', <span class="cap">M</span>c <span class="cap">H</span>enry from the <span class="cap">H</span>ong <span class="cap">K</span>ong<br /><span class="cap">S</span>hipyards has arrived! <span class="cap">H</span>e says, \'I see<br />ye\'ve a wee bit of damage to yer ship.<br /><span class="cap">W</span>ill ye be wanting repairs?\' <span id="input"></span><span id="cursor">_</span>';allow=[1,1130,"J","N"];fnKeyInput();break;}
 else{goto=1210;delay=0;break;}
 case 1130:
 if(input[2]=="N"){goto=1210;delay=0;break;}
@@ -264,7 +264,7 @@ WW=Mf(DM*amount/BR);DM=(WW<=DM)?DM-WW:0;CA-=amount;fRP();
 case 1210:
 //braves
 case 1300:
-if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du Geschäfte mit dem <span class="cap">E</span>lder <span class="cap">B</span>ruder<br /><span class="cap">W</span>u (dem Geldverleiher) machen? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"Y","N"];fnKeyInput();break;}
+if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du Geschäfte mit dem <span class="cap">E</span>lder <span class="cap">B</span>ruder<br /><span class="cap">W</span>u (dem Geldverleiher) machen? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"J","N"];fnKeyInput();break;}
 else{goto=1500;delay=0;break;}
 case 1310:
 //plight
@@ -323,18 +323,18 @@ if(input[2]=="K"){goto="B1";
 }else{goto="NOTYET";}
 delay=0;break;
 case "NEWSHIP1":
-allow=[1,"NEWSHIP2","Y","N"];
+allow=[1,"NEWSHIP2","J","N"];
 elements["message"].innerHTML=comp$+'<span class="cap">D</span>o you wish to trade in your '+(DM>0?'<span class="inverse">damaged</span>':'fine')+
 '<br/>ship for one with 50 more capacity by<br/>paying an additional '+fnFC(SP)+', '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "NEWSHIP2":
-if(input[2]=="Y"){CA-=SP;MW+=50;SC+=50;DM=0;fRP();}goto="R-NEWSHIP";delay=2;break;
+if(input[2]=="J"){CA-=SP;MW+=50;SC+=50;DM=0;fRP();}goto="R-NEWSHIP";delay=2;break;
 case "NEWGUN1":
-allow=[1,"NEWGUN2","Y","N"];
+allow=[1,"NEWGUN2","J","N"];
 elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du eine Schiffskanone<br/>für '+fnFC(SP)+', kaufen '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "NEWGUN2":
-if(input[2]=="Y"&&MW>=10){CA-=SP;GN+=1;MW-=10;fRP();delay=2;goto="R-NEWGUN";}else if(input[2]=="Y"){
+if(input[2]=="J"&&MW>=10){CA-=SP;GN+=1;MW-=10;fRP();delay=2;goto="R-NEWGUN";}else if(input[2]=="J"){
 elements["message"].innerHTML+='<br/><br/><span class="cap">D</span>ein Schiff wäre dann überladen, '+t$+"!";
 fnKeyInput();cursor[0]=null;delay=10;goto="R-NEWGUN";}else{delay=2;goto="R-NEWGUN";}break;
 case "PRICE":
