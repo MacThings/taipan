@@ -23,9 +23,16 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Hide Taipan" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Check for updates ..." id="Olw-nP-bQN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                                <action selector="checkForUpdates:" target="lxS-7W-h6l" id="vzb-7O-rH2"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="7LL-7y-Luc"/>
+                                        <menuItem title="Hide Taipan" keyEquivalent="h" id="hik-eQ-gnC">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="8KB-2u-o2A"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
@@ -58,29 +65,11 @@
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Help" id="wpr-3q-Mcd">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
-                                    <items>
-                                        <menuItem title="Taipan Help" keyEquivalent="?" id="FKE-Sm-Kum">
-                                            <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -94,6 +83,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Taipan" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="lxS-7W-h6l" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
