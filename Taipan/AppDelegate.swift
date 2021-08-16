@@ -8,10 +8,7 @@
 
 import Cocoa
 
-// protocol
-protocol feedBack {
-    func output()
-}    
+   
     
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

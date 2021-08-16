@@ -806,6 +806,8 @@
                                                         <menuItem title="Traditional" state="on" id="aeW-VW-Ln2"/>
                                                         <menuItem title="2x" id="6Rf-Po-JSw"/>
                                                         <menuItem title="3x" id="kMs-Ha-SvE"/>
+                                                        <menuItem title="4x" id="9G9-tn-Fyy"/>
+                                                        <menuItem title="5x" id="Msb-dH-5M1"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
@@ -874,6 +876,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="game_speed" destination="gux-Wy-gy5" id="Qbb-aX-yS0"/>
                         <outlet property="start_button" destination="Xlf-3h-P7C" id="nVr-hc-e6E"/>
                         <outlet property="title_picture" destination="xi2-Of-tBf" id="diM-Wb-o6r"/>
                     </connections>

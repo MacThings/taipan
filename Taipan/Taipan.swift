@@ -15,8 +15,6 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-             
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.pressStartbutton),
@@ -28,13 +26,25 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         let url = URL(fileURLWithPath: Bundle.main.resourcePath!)
         var LaunchPath = url.deletingLastPathComponent().deletingLastPathComponent().absoluteString.replacingOccurrences(of: "file://", with: "").replacingOccurrences(of: "%20", with: " ")
         LaunchPath.removeLast()
+        
         shell(cmd: "cp -rf " + LaunchPath + "/Contents/Resources/Taipan /private/tmp/")
         
+        let languagecheck = UserDefaults.standard.string(forKey: "Language")
+        if languagecheck!.contains("Engl") {
+            print("")
+        } else {
+            shell(cmd: "rm /private/tmp/Taipan/Taipan.html; mv /private/tmp/Taipan/Taipan_DE.html /private/tmp/Taipan/Taipan.html")
+        }
+            
         let speedcheck = UserDefaults.standard.string(forKey: "Speed")
         if speedcheck == "2x"{
             shell(cmd: "sed -ib '120s/.*/250/' /private/tmp/Taipan/Taipan.html")
         } else if speedcheck == "3x"{
             shell(cmd: "sed -ib '120s/.*/170/' /private/tmp/Taipan/Taipan.html")
+        } else if speedcheck == "4x"{
+            shell(cmd: "sed -ib '120s/.*/125/' /private/tmp/Taipan/Taipan.html")
+        } else if speedcheck == "5x"{
+            shell(cmd: "sed -ib '120s/.*/100/' /private/tmp/Taipan/Taipan.html")
         }
         
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
