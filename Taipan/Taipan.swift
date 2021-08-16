@@ -49,7 +49,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
         if fontcheck == "System"{
-            shell(cmd: "sed -ib '9d;10d' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib '9d;10d;58d' /private/tmp/Taipan/Taipan.html")
         }
         
         let alert_check = UserDefaults.standard.bool(forKey: "AlertShown")

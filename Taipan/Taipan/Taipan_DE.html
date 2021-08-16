@@ -264,7 +264,7 @@ WW=Mf(DM*amount/BR);DM=(WW<=DM)?DM-WW:0;CA-=amount;fRP();
 case 1210:
 //braves
 case 1300:
-if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du Geschäfte mit dem <span class="cap">E</span>lder <span class="cap">B</span>ruder<br /><span class="cap">W</span>u (dem Geldverleiher) machen? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"J","N"];fnKeyInput();break;}
+if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du Geschäfte mit dem <span class="cap">E</span>lder <span class="cap">B</span>ruder<br /><span class="cap">W</span>u, dem Geldverleiher machen? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"J","N"];fnKeyInput();break;}
 else{goto=1500;delay=0;break;}
 case 1310:
 //plight
@@ -739,9 +739,8 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 				</td>
 			</tr>
 		</table></div>
+		<span class="cap">K</span>licke Spiel neustarten um eine neue Runde zu spielen.
 		<br /><br />
-		<span class="cap">C</span>lick refresh to play again.
-		<br /><br /><br /><br />
 	</div>
 </div>
 </body>

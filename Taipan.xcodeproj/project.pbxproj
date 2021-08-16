@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,6 +53,7 @@
 		2A3358CD26C9CF3C003BC9D2 /* Taipan.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Taipan.woff2; sourceTree = "<group>"; };
 		2A3358CE26C9CF3C003BC9D2 /* MegaMicro.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MegaMicro.woff2; sourceTree = "<group>"; };
 		2A7CB15226CA79AC00B1A97B /* Taipan_DE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Taipan_DE.html; sourceTree = "<group>"; };
+		2A7CB15C26CADFFD00B1A97B /* taipan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = taipan.html; sourceTree = "<group>"; };
 		E5FE08561DDDACB100DB19B9 /* Taipan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taipan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5FE085B1DDDACB100DB19B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 				E5FE085D1DDDACB100DB19B9 /* Assets.xcassets */,
 				E5FE085F1DDDACB100DB19B9 /* Main.storyboard */,
 				E5FE08621DDDACB100DB19B9 /* Info.plist */,
+				2A7CB15C26CADFFD00B1A97B /* taipan.html */,
 			);
 			path = Taipan;
 			sourceTree = "<group>";
@@ -135,6 +137,7 @@
 				E5FE08541DDDACB100DB19B9 /* Resources */,
 				2A3358D526C9CF57003BC9D2 /* Copy Taipan Files */,
 				2A3358DA26C9CF6B003BC9D2 /* Copy  Taipan Fonts */,
+				2A7CB15A26CADF9D00B1A97B /* Zip and send to homeshare */,
 			);
 			buildRules = (
 			);
@@ -153,7 +156,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Marco Barnig";
+				ORGANIZATIONNAME = "Sascha Lamprecht";
 				TargetAttributes = {
 					E5FE08551DDDACB100DB19B9 = {
 						CreatedOnToolsVersion = 8.2;
@@ -162,7 +165,7 @@
 				};
 			};
 			buildConfigurationList = E5FE08511DDDACB100DB19B9 /* Build configuration list for PBXProject "Taipan" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -190,6 +193,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A7CB15A26CADF9D00B1A97B /* Zip and send to homeshare */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Zip and send to homeshare";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfind \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"/Contents/Resources -type d -name \"Sparkle.framework\" -exec rm -r \"{}\" \\;\nrm -r /Applications/\"${PRODUCT_NAME}.app\"\ncp -r \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Applications/\nnewname=$( echo \"${PRODUCT_NAME}\" |tr '[:upper:]' '[:lower:]' |sed -e 's/\\ //g' -e 's/-//g' )\nif [ -d /Volumes/Homeshare/Xcode/$newname ]; then\n    cp \"/Users/luigi/Documents/Xcode/$newname/${PRODUCT_NAME}/$newname.html\" \"/Volumes/Homeshare/Xcode/$newname/upload/$newname.html\"\n    rm /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip 2> /dev/null\n    cd /Applications\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" ~/Desktop/\"${PRODUCT_NAME} ${MARKETING_VERSION}.zip\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5FE08521DDDACB100DB19B9 /* Sources */ = {
@@ -320,7 +344,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -334,7 +359,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Taipan/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = taipan.slsoft.de;
@@ -354,7 +382,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Taipan/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = taipan.slsoft.de;
