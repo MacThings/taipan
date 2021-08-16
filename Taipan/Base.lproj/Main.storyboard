@@ -343,7 +343,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="beP-cU-99E">
-                                <rect key="frame" x="-2" y="20" width="317" height="16"/>
+                                <rect key="frame" x="-2" y="11" width="317" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="Yg1-94-Ura">
                                     <font key="font" metaFont="systemBold" size="15"/>
@@ -370,7 +370,7 @@
     </scenes>
     <resources>
         <image name="Ship" width="418" height="288"/>
-        <image name="Taipan" width="1024" height="1024"/>
+        <image name="Taipan" width="1125" height="1125"/>
         <image name="Title" width="628" height="586"/>
     </resources>
 </document>
