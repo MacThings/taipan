@@ -350,7 +350,7 @@ elements["message"].innerHTML=prices+'<span class="cap">W</span>as soll ich kauf
 fnKeyInput();break;
 case "B2":
 allow=[6,"B3","W","0","1","2","3","4","5","6","7","8","9"];
-if(input[2]=="O"){item=0;}else if(input[2]=="V"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
+if(input[2]=="O"){item=0;}else if(input[2]=="S"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
 afford=Mf(CA/CP[item]);
 case "B2a":
 elements["message"].innerHTML=prices+'<span class="cap">W</span>ieviel '+BP[item][0]+' soll ich<br/>kaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>'+
@@ -366,7 +366,7 @@ elements["message"].innerHTML=prices+'<span class="cap">W</span>as soll ich verk
 fnKeyInput();break;
 case "S2":
 allow=[6,"S3","W","0","1","2","3","4","5","6","7","8","9"];
-if(input[2]=="O"){item=0;}else if(input[2]=="V"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
+if(input[2]=="O"){item=0;}else if(input[2]=="S"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
 case "S2a":
 elements["message"].innerHTML=prices+'<span class="cap">W</span>ieviel '+BP[item][0]+' soll<br/>ich verkaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
