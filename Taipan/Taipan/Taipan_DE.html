@@ -256,7 +256,7 @@ if(input[2]=="N"){goto=1210;delay=0;break;}
 case 1140:
 BR=Mf((fR(60*(TI+3)/4)+25*(TI+3)/4)*SC/50);
 case 1145:
-elements["message"].innerHTML=comp$+'<span class="cap">O</span>h, bedauerlicherweise ist es '+Mf(DM/SC*100)+'% beschädigt.<br /><span class="cap">W</span>ir können Dein Schiff für '+fnFC(BR)+'<br /> instandsetzen oder wir machen nur eine teilweise Reparatur.<br /><span class="cap">W</span>ieviel möchtest Du ausgeben? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
+elements["message"].innerHTML=comp$+'<span class="cap">O</span>h, bedauerlicherweise ist es zu '+Mf(DM/SC*100)+'% beschädigt.<br /><span class="cap">W</span>ir können Dein Schiff für '+fnFC(BR)+' instandsetzen<br />oder wir machen nur eine teilweise Reparatur.<br /><span class="cap">W</span>ieviel möchtest Du ausgeben? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1150:
 var amount;if(input[2]=="W"){amount=BR;if(CA<amount){amount=CA;}}else{amount=+input[2];}
 if(CA<amount){elements["message"].innerHTML=comp$+t$+', Du hast nicht genug Geld!!';fnKeyInput();cursor[0]=null;delay=6;goto=1145;break;}
@@ -324,8 +324,8 @@ if(input[2]=="K"){goto="B1";
 delay=0;break;
 case "NEWSHIP1":
 allow=[1,"NEWSHIP2","J","N"];
-elements["message"].innerHTML=comp$+'<span class="cap">D</span>o you wish to trade in your '+(DM>0?'<span class="inverse">damaged</span>':'fine')+
-'<br/>ship for one with 50 more capacity by<br/>paying an additional '+fnFC(SP)+', '+t$+'? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du etwas in Dein '+(DM>0?'<span class="inverse">beschädigtes</span>':'schönes')+
+'<br/>Schiff investieren um 50 mehr Kapazität zu erhalten<br/>indem Du zusätzlich '+fnFC(SP)+' bezahlst, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "NEWSHIP2":
 if(input[2]=="J"){CA-=SP;MW+=50;SC+=50;DM=0;fRP();}goto="R-NEWSHIP";delay=2;break;
