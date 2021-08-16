@@ -85,7 +85,7 @@ var YEARSf, MONTHSf;
 var LT=Ml(10);
 var comma=new RegExp(/(\d+)(\d{3})/);
 var cities = [
-	'<span class="cap">A</span>t sea',
+	'<span class="cap">A</span>uf See',
 	'<span class="cap">H</span>ong <span class="cap">K</span>ong',
 	'<span class="cap">S</span>hanghai',
 	'<span class="cap">N</span>agasaki',
@@ -178,14 +178,14 @@ function fnOnKeyDown(e) {
 }
 
 function fnFC(WW) {
-	if(WW<1000){return WW;}else if(WW<1e6){return WW.toString().replace(comma,'$1,$2');}
+    if(WW<1000){return WW;}else if(WW<1e6){return WW.toString().replace(comma,'$1.$2');}
 	var II=Mf(Ml(WW)/LT);
 	var IJ=Mf(II/3)*3;
 	var IK=Mp(10,(II-2));
 	WW=Mf(WW/IK+.5)*IK/Mp(10,IJ);
 	if(WW<10){WW=WW.toFixed(2);}else if(WW<100){WW=WW.toFixed(1);}
 	var W='';
-	if(IJ==6){W='<span class="cap">M</span>illion';}else if(IJ==9){W='<span class="cap">B</span>illion';}else if(IJ==12){W='<span class="cap">T</span>rillion';}
+	if(IJ==6){W='<span class="cap">M</span>illion';}else if(IJ==9){W='<span class="cap">M</span>illiarden';}else if(IJ==12){W='<span class="cap">T</span>rillion';}
 	return WW+" "+W;
 }
 
@@ -238,7 +238,7 @@ fRP();elements["month0"].innerHTML=months[MO][0];elements["month1"].innerHTML=mo
 if(LO!=1){goto=1500;delay=0;break;}
 if(LI==0&&CA>0){
 WW=0;var W=1.8;if(TI>12){WW=fR(1000*TI)+1000*TI;W=1;}LI$=fR(CA/W)+WW;
-elements["message"].innerHTML=comp$+'<span class="cap">L</span>i <span class="cap">Y</span>uen erbittet '+fnFC(LI$)+' als Spende an den Tempel von<br /><span class="cap">T</span>in <span class="cap">H</span>au, die <span class="cap">M</span>eeresgöttin. <span class="cap">M</span>öchtest du bezahlen? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=comp$+'<span class="cap">L</span>i <span class="cap">Y</span>uen erbittet '+fnFC(LI$)+' als Spende an den Tempel von<br /><span class="cap">T</span>in <span class="cap">H</span>au, der <span class="cap">M</span>eeresgöttin. <span class="cap">M</span>öchtest du bezahlen? <span id="input"></span><span id="cursor">_</span>';
 allow=[1,1060,"J","N"];fnKeyInput();break;}
 case 1060:
 if(line==1060&&input[2]=="J"){CA-=LI$;if(CA>=0){LI=1;elements["CA"].innerHTML=fnFC(CA);}else
@@ -249,17 +249,17 @@ if(line==1080){if(input[2]=="J"){DW-=CA;LI=1;elements["message"].innerHTML=comp$
 }else{elements["message"].innerHTML=comp$+'<span class="cap">V</span>ery well. <span class="cap">E</span>lder <span class="cap">B</span>rother <span class="cap">W</span>u will not pay<br /><span class="cap">L</span>i <span class="cap">Y</span>uen the difference. <span class="cap">I</span> would be very<br />wary of pirates if <span class="cap">I</span> were you, '+t$+'.';
 }CA=0;elements["CA"].innerHTML=fnFC(CA);fnKeyInput();delay=10;goto=1120;break;}
 case 1120:
-if(LO==1&&DM>0){elements["message"].innerHTML=comp$+t$+', <span class="cap">M</span>c <span class="cap">H</span>enry from the <span class="cap">H</span>ong <span class="cap">K</span>ong<br /><span class="cap">S</span>hipyards has arrived! <span class="cap">H</span>e says, \'I see<br />ye\'ve a wee bit of damage to yer ship.<br /><span class="cap">W</span>ill ye be wanting repairs?\' <span id="input"></span><span id="cursor">_</span>';allow=[1,1130,"J","N"];fnKeyInput();break;}
+if(LO==1&&DM>0){elements["message"].innerHTML=comp$+t$+', <span class="cap">M</span>c <span class="cap">H</span>enry von der <span class="cap">H</span>ong <span class="cap">K</span>ong <span class="cap">S</span>chiffswerft<br /> ist angekommen! <span class="cap">E</span>r sagt, \'Ich sehe, <br />das das Schiff etwas beschädigt ist.<br /><span class="cap">M</span>öchtest Du es reparieren lassen?\' <span id="input"></span><span id="cursor">_</span>';allow=[1,1130,"J","N"];fnKeyInput();break;}
 else{goto=1210;delay=0;break;}
 case 1130:
 if(input[2]=="N"){goto=1210;delay=0;break;}
 case 1140:
 BR=Mf((fR(60*(TI+3)/4)+25*(TI+3)/4)*SC/50);
 case 1145:
-elements["message"].innerHTML=comp$+'<span class="cap">O</span>ch, \'tis a pity to be '+Mf(DM/SC*100)+'% damaged.<br /><span class="cap">W</span>e can fix yer whole ship for '+fnFC(BR)+'<br />or make partial repairs if you wish.<br /><span class="cap">H</span>ow much will ye spend? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
+elements["message"].innerHTML=comp$+'<span class="cap">O</span>h, bedauerlicherweise ist es '+Mf(DM/SC*100)+'% beschädigt.<br /><span class="cap">W</span>ir können Dein Schiff für '+fnFC(BR)+'<br /> instandsetzen oder wir machen nur eine teilweise Reparatur.<br /><span class="cap">W</span>ieviel möchtest Du ausgeben? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1150:
 var amount;if(input[2]=="W"){amount=BR;if(CA<amount){amount=CA;}}else{amount=+input[2];}
-if(CA<amount){elements["message"].innerHTML=comp$+t$+', you do not have enough cash!!';fnKeyInput();cursor[0]=null;delay=6;goto=1145;break;}
+if(CA<amount){elements["message"].innerHTML=comp$+t$+', Du hast nicht genug Geld!!';fnKeyInput();cursor[0]=null;delay=6;goto=1145;break;}
 WW=Mf(DM*amount/BR);DM=(WW<=DM)?DM-WW:0;CA-=amount;fRP();
 case 1210:
 //braves
@@ -272,25 +272,25 @@ if(input[2]=="N"){goto=1500;delay=0;break;}
 case 1360:
 if(DW==0||CA==0){goto=1400;delay=0;break;}
 case 1370:
-elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much do you wish to repay<br />him? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel möchtest Du ihm<br />zurückzahlen? <span id="input"></span><span id="cursor">_</span>';
 allow=[9,1380,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1380:
 var amount=(input[2]=="W"?CA:+input[2]);
 if(CA>=amount){CA-=amount;DW-=amount;if(DW<0){DW=0;}fRP();}else
-{elements["message"].innerHTML+='<br /><br /><br />'+t$+', you have only '+fnFC(CA)+'<br />in cash.';fnKeyInput();goto=1370;delay=10;break;}
+{elements["message"].innerHTML+='<br /><br /><br />'+t$+', Du hast nur '+fnFC(CA)+'<br />in Bar.';fnKeyInput();goto=1370;delay=10;break;}
 case 1400:
-elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much do you wish to<br />borrow? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel möchtest Du bei Ihm<br />leihen? <span id="input"></span><span id="cursor">_</span>';
 allow=[9,1420,"0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1420:
 var i=+input[2];if((CA*2)>=i){CA+=i;DW+=i;fRP();}else
-{elements["message"].innerHTML+='<br /><br /><br /><span class="cap">H</span>e won\'t loan you so much, '+t$+'!';goto=1400;delay=10;break;}
+{elements["message"].innerHTML+='<br /><br /><br /><span class="cap">E</span>r möchte Dir nicht so viel leihen, '+t$+'!';goto=1400;delay=10;break;}
 case 1500:
 SP=Mf(1000+fR(1000*(TI+5)/6))*(Mf(SC/50)*(DM>0?1:0)+1);if(CA>=SP&&fR(4)==0){goto="NEWSHIP1";delay=0;break;}
 case "R-NEWSHIP":
 SP=Mf(fR(1000*(TI+5)/6)+500);if(CA>=SP&&fR(3)==0){goto="NEWGUN1";delay=0;break;}
 case "R-NEWGUN":
 if(ST[1][0]>0&&LO>1&&fR(18)==0){var i=Mf(CA/1.8);MW+=ST[1][0];elements["MW"].innerHTML=MW;ST[1][0]=0;elements["h0"].innerHTML=0;CA-=i;elements["CA"].innerHTML=fnFC(CA);
-elements["message"].innerHTML=comp$+'Bad Joss!!<br />The local authorities have seized your<br /><span class="cap">O</span>pium cargo and have also fined you<br />'+fnFC(i)+', '+t$+'!';
+elements["message"].innerHTML=comp$+'Heiliger Joss!!<br />Die örtlichen Behörden haben Deine<br /><span class="cap">O</span>pium-Fracht beschlagnahmt und eine Geldbuße verhängt<br />'+fnFC(i)+', '+t$+'!';
 fnKeyInput();delay=18;goto="R-BUSTED";break;}
 case "R-BUSTED":
 //2000,2030 messenger reports large theft
@@ -298,7 +298,7 @@ case 2100:
 for(var i=0;i<4;i++){CP[i]=Mf(BP[i][LO]/2*(fR(3)+1)*Mp(10,(3-i)));}
 //2310-2330
 LI=Mm(LI,fR(20));if(LI==0&&LO>1&&fR(4)){
-elements["message"].innerHTML=comp$+'<span class="cap">L</span>i <span class="cap">Y</span>uen has sent a lieutenant,<br />'+t$+'. <span class="cap">H</span>e says his admiral wishes<br />to see you in <span class="cap">H</span>ong <span class="cap">K</span>ong, posthaste!';
+elements["message"].innerHTML=comp$+'<span class="cap">L</span>i <span class="cap">Y</span>uen hat einen Leutnant entsandt,<br />'+t$+'. <span class="cap">E</span>r sagt sein Admiral wünscht<br />Dich schnellstens in <span class="cap">H</span>ong <span class="cap">K</span>ong zu sehen!';
 fnKeyInput();delay=10;goto=2410;break;}
 case 2410:
 if(fR(9)==0){goto="PRICE";delay=0;break;}
@@ -403,14 +403,14 @@ elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel '+BP[wh2][
 case 2628:
 var amount=(input[2]=="W"?ST[wh1][wh2]:+input[2]);
 if(wh1==1&&amount>0&&WC==0){elements["message"].innerHTML+='<br/><br/>Dein Lagerhaus ist voll, '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
-if(wh1==1&&amount>WC){elements["message"].innerHTML+='<br/><br/>Your warehouse will only hold an<br />additional '+fnFC(WC)+', '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
-if(amount>ST[wh1][wh2]){elements["message"].innerHTML+='<br/><br/>You have only '+fnFC(ST[wh1][wh2])+', '+t$+'.';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
+if(wh1==1&&amount>WC){elements["message"].innerHTML+='<br/><br/>In Deinem Lager ist nur noch<br />Platz für '+fnFC(WC)+', '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
+if(amount>ST[wh1][wh2]){elements["message"].innerHTML+='<br/><br/>Du hast nur '+fnFC(ST[wh1][wh2])+', '+t$+'.';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
 ST[wh1][wh2]-=amount;if(wh1==0){ST[1][wh2]+=amount;WS-=amount;WC+=amount;MW-=amount;}else{ST[0][wh2]+=amount;WS+=amount;WC-=amount;MW+=amount;}elements['w'+wh2].innerHTML=fnFC(ST[0][wh2]);elements['h'+wh2].innerHTML=fnFC(ST[1][wh2]);elements['WS'].innerHTML=fnFC(WS);elements['WC'].innerHTML=fnFC(WC);elements["MW"].innerHTML=(MW>=0?MW:overload$);
 goto=2622;delay=0;break;
 case 2695:
 elements["message"].innerHTML='<br /><div class="millionaire"><span class="cap">Y</span> o&nbsp;u &nbsp;\' &nbsp;r &nbsp;e &nbsp; &nbsp;a<br /><br /><span class="cap">M &nbsp; I &nbsp; L &nbsp; L &nbsp; I &nbsp; O &nbsp; N &nbsp; A &nbsp; I &nbsp; R &nbsp; E &nbsp; !</span></div>';fnKeyInput();delay=18;goto=20000;break;
 case "NOTYET":
-elements["message"].innerHTML=comp$+t$+", that command hasn't yet been implemented!";delay=6;goto="PORT2";fnKeyInput();break;
+elements["message"].innerHTML=comp$+t$+", dieser Befehl ist noch nicht implementiert!";delay=6;goto="PORT2";fnKeyInput();break;
 case "Q1":
 allow=[1,"Q2","1","2","3","4","5","6","7"];
 elements["message"].innerHTML=comp$+t$+", möchtest Du nach:<br/><br/>"+
@@ -420,30 +420,30 @@ elements["message"].innerHTML=comp$+t$+", möchtest Du nach:<br/><br/>"+
 fnKeyInput();break;
 case "Q2":
 if(input[2]==LO){
-elements["message"].innerHTML+='<br/><span class="cap">Y</span>ou\'re already here, '+t$+".";
+elements["message"].innerHTML+='<br/><span class="cap">D</span>u befindest Dich bereits dort, '+t$+".";
 fnKeyInput();cursor[0]=null;delay=16;goto="Q1";break;}
 case 3030:
 elements["location"].innerHTML=cities[0];LO=input[2];
 elements["message"].innerHTML=capt$;fnKeyInput();delay=2;goto=3100;break;
 case 3100:
 if(fR(FQ)==0){SN=fR(SC/10+GN)+1;F1=1;elements["message"].innerHTML=capt$+SN+' hostile ship'+(SN>1?'s':'')+' approaching, '+t$+'!!';fnKeyInput();delay=10;goto=5000;break;}
-if(fR(4+8*LI)==0){elements["message"].innerHTML=capt$+'<span class="cap">L</span>i <span class="cap">Y</span>uen\'s pirates, '+t$+'!!';fnKeyInput();delay=4;goto=3230;break;}
+if(fR(4+8*LI)==0){elements["message"].innerHTML=capt$+'<span class="cap">L</span>i <span class="cap">Y</span>uen\'s Piraten, '+t$+'!!';fnKeyInput();delay=4;goto=3230;break;}
 goto=3300;delay=0;break;
 case 3230:
-if(LI>0){elements["message"].innerHTML+='<br /><br /><span class="cap">G</span>ood joss!! <span class="cap">T</span>hey let us be!!';fnKeyInput();delay=6;goto=3300;break;}
-else{SN=fR(SC/5+GN)+5;F1=2;elements["message"].innerHTML+='<br /><br />'+SN+' ship'+(SN>1?'s':'')+' of <span class="cap">L</span>i <span class="cap">Y</span>uen\'s pirate<br />fleet, '+t$+'!!';fnKeyInput();delay=6;goto=5000;break;}
+if(LI>0){elements["message"].innerHTML+='<br /><br /><span class="cap">G</span>uter Joss!! <span class="cap">S</span>ie lassen uns in ruhe!!';fnKeyInput();delay=6;goto=3300;break;}
+else{SN=fR(SC/5+GN)+5;F1=2;elements["message"].innerHTML+='<br /><br />'+SN+' Schiff'+(SN>1?'e':'')+' von <span class="cap">L</span>i <span class="cap">Y</span>uen\'s Piraten<br />-Flotte, '+t$+'!!';fnKeyInput();delay=6;goto=5000;break;}
 case 3300:
-if(fR(10)==0){elements["message"].innerHTML=capt$+'<span class="cap">S</span>'+"torm, "+t$+"!!";fnKeyInput();delay=4;goto=3320;break;}else{fnKeyInput();delay=0;goto="ARR1";break;}
+if(fR(10)==0){elements["message"].innerHTML=capt$+'<span class="cap">S</span>'+"turm, "+t$+"!!";fnKeyInput();delay=4;goto=3320;break;}else{fnKeyInput();delay=0;goto="ARR1";break;}
 case 3320:
-if(fR(30)==0){elements["message"].innerHTML+='<br /><br />&nbsp; &nbsp;<span class="cap">I</span> think we\'re going down!!';fnKeyInput();delay=4;goto="STORM";break;}else{fnKeyInput();delay=0;goto=3330;break;}
+if(fR(30)==0){elements["message"].innerHTML+='<br /><br />&nbsp; &nbsp;<span class="cap">I</span>ch glaube wir gehen unter!!';fnKeyInput();delay=4;goto="STORM";break;}else{fnKeyInput();delay=0;goto=3330;break;}
 case "STORM":
-if(fR(DM/SC*3)==0){elements["message"].innerHTML+='<br /><br /><span class="cap">W</span>'+"e're going down, "+t$+"!!";fnKeyInput();delay=4;goto=20000;break;}
+if(fR(DM/SC*3)==0){elements["message"].innerHTML+='<br /><br /><span class="cap">W</span>'+"ir' gehen unter, "+t$+"!!";fnKeyInput();delay=4;goto=20000;break;}
 case 3330:
-elements["message"].innerHTML+='<br /><br />&nbsp; &nbsp; <span class="cap">W</span>e made it!!';fnKeyInput();delay=4;goto=3340;break;
+elements["message"].innerHTML+='<br /><br />&nbsp; &nbsp; <span class="cap">W</span>ir haben es geschafft!!';fnKeyInput();delay=4;goto=3340;break;
 case 3340:
-if(fR(3)==0){D=LO;while(LO==D){LO=fR(7)+1;}elements["message"].innerHTML=capt$+"We've been blown off course<br />to "+cities[LO];fnKeyInput();delay=4;goto="ARR1";break;}
+if(fR(3)==0){D=LO;while(LO==D){LO=fR(7)+1;}elements["message"].innerHTML=capt$+"Wir sind vom Kurs abgekommen<br />und nach "+cities[LO]+" getrieben worden";fnKeyInput();delay=4;goto="ARR1";break;}
 case "ARR1":
-elements["message"].innerHTML=capt$+'<span class="cap">A</span>rriving at '+cities[LO];
+elements["message"].innerHTML=capt$+'<span class="cap">I</span>n '+cities[LO]+' angekommen';
 fnKeyInput();delay=8;goto="ARR2";break;
 case "ARR2":
 elements["message"].innerHTML=comp$;
@@ -471,17 +471,17 @@ else{elements["f4"].innerHTML=t$+', was sollen wir tun?? (Angreifen, Flüchten)'
 case 5200:
 get=false;elements["f4"].innerHTML='<span class="cap">A</span>ye, wir flüchten, '+t$+'!';fnKeyInput();delay=4;goto=5210;break;
 case 5210:
-OK+=IK++;if(fR(OK)>fR(SN)){OK=3;elements["f4"].innerHTML='<span class="cap">W</span>e got away from \'em, '+t$+'!!';fnKeyInput();delay=4;goto=5900;break;}
+OK+=IK++;if(fR(OK)>fR(SN)){OK=3;elements["f4"].innerHTML='<span class="cap">W</span>ir konnten ihnen entkommen, '+t$+'!!';fnKeyInput();delay=4;goto=5900;break;}
 case 5220:
-elements["f4"].innerHTML='<span class="cap">C</span>an\'t lose \'em!!';fnKeyInput();delay=4;goto=5230;break;
+elements["f4"].innerHTML='<span class="cap">K</span>önnen sie nicht abhängen!!';fnKeyInput();delay=4;goto=5230;break;
 case 5230:
-if(SN>2&&fR(5)==0){W=Mf(fR(SN/2)+1);SN-=W;elements["SN"].innerHTML=SN;if(SS>SN){fnRemoveShips();}elements["f4"].innerHTML='<span class="cap">B</span>ut we escaped from '+W+' of \'em, '+t$+'!';fnKeyInput();delay=4;goto=5500;break;}else{delay=0;goto=5500;break;}
+if(SN>2&&fR(5)==0){W=Mf(fR(SN/2)+1);SN-=W;elements["SN"].innerHTML=SN;if(SS>SN){fnRemoveShips();}elements["f4"].innerHTML='<span class="cap">A</span>ber wird sind von '+W+' von ihnen entkommen, '+t$+'!';fnKeyInput();delay=4;goto=5500;break;}else{delay=0;goto=5500;break;}
 case 5300:
 get=false;
-if(GN==0){elements["f4"].innerHTML='<span class="cap">W</span>e have no guns, '+t$+'!!';fnKeyInput();delay=4;goto=5500;break;}
-CG=0;elements["f4"].innerHTML='<span class="cap">A</span>ye, we\'ll fight \'em, '+t$+'!';fnKeyInput();delay=4;goto=5310;break;
+if(GN==0){elements["f4"].innerHTML='<span class="cap">W</span>ir haben keine Kanonen, '+t$+'!!';fnKeyInput();delay=4;goto=5500;break;}
+CG=0;elements["f4"].innerHTML='<span class="cap">A</span>ye, wir werden gegen sie kämpfen, '+t$+'!';fnKeyInput();delay=4;goto=5310;break;
 case 5310:
-SK=0;elements["f4"].innerHTML='<span class="cap">W</span>e\'re firing on \'em, '+t$+'!';
+SK=0;elements["f4"].innerHTML='<span class="cap">W</span>ir feuern auf sie, '+t$+'!';
 case 5320:
 if(SS==0){fnAddShips();}
 var i;if(SN>0&&++CG<=GN){do{i=fR(10);}while(AM[i][0]==0);}else{fnKeyInput();delay=0;goto=5340;break;}
@@ -492,26 +492,26 @@ var img=document.createElement("img");img.setAttribute("class","dmg");img.classN
 AM[i][1]+=fR(30)+10;if(AM[i][1]>AM[i][0]){AM[i][0]=0;AM[i][1]=0;SN--;SS--;SK++;fnSink(i,0,(fR(20)==0?40:20));break;}
 fnKeyInput();delay=2;goto=5320;break;
 case 5340:
-if(SK){elements["f4"].innerHTML='<span class="cap">S</span>unk '+SK+' of the buggers, '+t$+'!';}else{elements["f4"].innerHTML='<span class="cap">H</span>it \'em, but didn\'t sink \'em, '+t$+'!';}fnKeyInput();delay=4;goto=5360;break;
+if(SK){elements["f4"].innerHTML='<span class="cap">W</span>ir haben '+SK+' von den Mistkerlen erledigt, '+t$+'!';}else{elements["f4"].innerHTML='<span class="cap">G</span>etroffen, aber nicht versenkt, '+t$+'!';}fnKeyInput();delay=4;goto=5360;break;
 case 5360:
 if(fR(S0)<SN*.6/F1||SN==0||SN==S0||SN<3){fnKeyInput();delay=0;goto=5500;break;}
-W=Mf(fR(SN/3/F1)+1);SN-=W;elements["SN"].innerHTML=SN;if(SS>SN){fnRemoveShips();}elements["f4"].innerHTML=W+' ran away, '+t$+'!';fnKeyInput();delay=4;goto=5500;break;
+W=Mf(fR(SN/3/F1)+1);SN-=W;elements["SN"].innerHTML=SN;if(SS>SN){fnRemoveShips();}elements["f4"].innerHTML=W+'ir sind weggelaufen, '+t$+'!';fnKeyInput();delay=4;goto=5500;break;
 case 5400:
 //throw
 get=false;
 case 5500:
-if(SN==0){OK=1;elements["f4"].innerHTML='<span class="cap">W</span>e got \'em all, '+t$+'!!';fnKeyInput();delay=4;goto=5900;break;}
-elements["f4"].innerHTML='<span class="cap">T</span>hey\'re firing on us, '+t$+'!';
+if(SN==0){OK=1;elements["f4"].innerHTML='<span class="cap">W</span>ir haben sie alle erwischt, '+t$+'!!';fnKeyInput();delay=4;goto=5900;break;}
+elements["f4"].innerHTML='<span class="cap">S</span>ie feuern auf uns, '+t$+'!';
 fnEnemyFire('visible');window.setTimeout("fnEnemyFire('hidden')",75);
 window.setTimeout("fnEnemyFire('visible')",150);window.setTimeout("fnEnemyFire('hidden')",225);
 window.setTimeout("fnEnemyFire('visible')",300);window.setTimeout("fnEnemyFire('hidden')",375);
 window.setTimeout("fnEnemyFire('visible')",450);window.setTimeout("fnEnemyFire('hidden')",525);
 fnKeyInput();delay=4;goto=5510;break;
 case 5510:
-elements["f4"].innerHTML='<span class="cap">W</span>e\'ve been hit, '+t$+'!!';fnKeyInput();delay=4;goto=5540;break;
+elements["f4"].innerHTML='<span class="cap">W</span>ir wurden getroffen, '+t$+'!!';fnKeyInput();delay=4;goto=5540;break;
 case 5540:
 DQ=(SN>15?15:SN);
-if(GN>0&&(fR(100)<(DM/SC)*100||(DM/SC)*100>80)){DQ=1;GN--;MW+=10;elements["GNs"].innerHTML=GN;elements["f4"].innerHTML='<span class="cap">T</span>he buggers hit a gun, '+t$+'!!';fnKeyInput();delay=4;goto=5550;break;}
+if(GN>0&&(fR(100)<(DM/SC)*100||(DM/SC)*100>80)){DQ=1;GN--;MW+=10;elements["GNs"].innerHTML=GN;elements["f4"].innerHTML='<span class="cap">D</span>ie Mistkerle haben eine Kanonen getroffen, '+t$+'!!';fnKeyInput();delay=4;goto=5550;break;}
 case 5550:
 DM+=fR(ED*DQ*F1)+DQ/2;
 if(DM>SC){fnKeyInput();delay=0;goto=20000;break;}
@@ -519,8 +519,8 @@ fnKeyInput();delay=0;goto=5060;break;
 case 5800:
 elements["SN"].innerHTML=SN;delay=2;goto=5320;break;
 case 5900:
-if(LC=='A'){CA+=BT;elements["message"].innerHTML='<br /><br /><span class="cap">W</span>e\'ve captured some booty.<br />It\'s worth '+fnFC(BT)+'!';}else
-{elements["message"].innerHTML='<br /><br /><span class="cap">W</span>e made it, '+t$+'!';}
+if(LC=='A'){CA+=BT;elements["message"].innerHTML='<br /><br /><span class="cap">W</span>ir haben Beute im Wert von '+fnFC(BT)+' gemacht!';}else
+{elements["message"].innerHTML='<br /><br /><span class="cap">W</span>ir haben es geschafft, '+t$+'!';}
 fRP();elements["S5"].style.display="none";elements["S4"].style.display="block";
 get=false;fnKeyInput();delay=10;goto=3300;break;
 case 10000:
