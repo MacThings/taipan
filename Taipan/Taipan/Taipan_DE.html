@@ -76,7 +76,7 @@ var elements = {};
 var MO=0,YE=1860,SC=60,BA=0,LO=1,TI=1,WC=10000,WS=0,EC=20,ED=.5,F1,DM=0,SP,WW,D;
 var DW,CA,MW,GN,FQ;
 var ST=[[0,0,0,0],[0,0,0,0]];
-var BP=[['<span class="cap">O</span>pium',11,16,15,14,12,10,13],['<span class="cap">S</span>ilk',11,14,15,16,10,13,12],['<span class="cap">A</span>rms',12,16,10,11,13,14,15],['<span class="cap">G</span>eneral <span class="cap">C</span>argo',10,11,12,13,14,15,16]];
+var BP=[['<span class="cap">O</span>pium',11,16,15,14,12,10,13],['<span class="cap">S</span>eide',11,14,15,16,10,13,12],['<span class="cap">W</span>affen',12,16,10,11,13,14,15],['<span class="cap">G</span>emischt <span class="cap">F</span>racht',10,11,12,13,14,15,16]];
 var LI=0,LI$;
 var SN,S0,SS,SK,BT,LC,CMD,OK,IK,AM=[[],[],[],[],[],[],[],[],[],[]];
 var CP=[];
@@ -95,16 +95,16 @@ var cities = [
 	'<span class="cap">B</span>atavia'
 ];
 var months = [['J','an'],['F','eb'],['M','ar'],['A','pr'],['M','ay'],['J','un'],['J','ul'],['A','ug'],['S','ep'],['O','ct'],['N','ov'],['D','ec']];
-var sstatus = ['<span class="cap">C</span>ritical','<span class="cap">P</span>oor','<span class="cap">F</span>air','<span class="cap">G</span>ood','<span class="cap">P</span>rime','<span class="cap">P</span>erfect'];
+var sstatus = ['<span class="cap">K</span>ritisch','<span class="cap">S</span>chlecht','<span class="cap">G</span>eht so','<span class="cap">G</span>ut','<span class="cap">T</span>op','<span class="cap">P</span>erfekt'];
 var shallI = [
-	'<span class="cap">S</span>hall <span class="cap">I</span> <span class="cap">B</span>uy, <span class="cap">S</span>ell, <span class="cap">V</span>isit bank, <span class="cap">T</span>ransfer cargo,<br/><span class="cap">Q</span>uit trading, or <span class="cap">R</span>etire?',
-	'<span class="cap">S</span>hall <span class="cap">I</span> <span class="cap">B</span>uy, <span class="cap">S</span>ell, <span class="cap">V</span>isit bank, <span class="cap">T</span>ransfer cargo,<br/>or <span class="cap">Q</span>uit trading?',
-	'<span class="cap">S</span>hall <span class="cap">I</span> <span class="cap">B</span>uy, <span class="cap">S</span>ell, or <span class="cap">Q</span>uit trading?'
+	'<span class="cap">S</span>oll ich <span class="cap">K</span>aufen, <span class="cap">V</span>erkaufen, <span class="cap">Bank</span> aufsuchen, <span class="cap">F</span>racht umladen,<br/><span class="cap">H</span>andel beenden oder <span class="cap">R</span>etire?',
+	'<span class="cap">S</span>oll ich <span class="cap">K</span>aufen, <span class="cap">V</span>erkaufen, <span class="cap">B</span>ank aufsuchen, <span class="cap">F</span>racht umladen oder den <span class="cap">H</span>andel beenden?',
+	'<span class="cap">S</span>oll ich <span class="cap">K</span>aufen, <span class="cap">V</span>erkaufen oder den <span class="cap">H</span>andel beenden?'
 ];
 var mesid;
 var t$ = '<span class="cap">T</span>aipan';
 var capt$ = '&nbsp;&nbsp;<span class="cap">C</span>aptain\'s <span class="cap">R</span>eport:<br/><br/>';
-var comp$ = '<span class="cap">C</span>omprador\'s <span class="cap">R</span>eport:<br/><br/>';
+var comp$ = '<span class="cap">C</span>omprador\'s <span class="cap">B</span>ericht:<br/><br/>';
 var overload$ = '<span class="inverse"><span class="cap">O</span>verload</span>';
 
 document.onkeydown = fnOnKeyDown;
@@ -256,15 +256,15 @@ if(input[2]=="N"){goto=1210;delay=0;break;}
 case 1140:
 BR=Mf((fR(60*(TI+3)/4)+25*(TI+3)/4)*SC/50);
 case 1145:
-elements["message"].innerHTML=comp$+'<span class="cap">O</span>ch, \'tis a pity to be '+Mf(DM/SC*100)+'% damaged.<br /><span class="cap">W</span>e can fix yer whole ship for '+fnFC(BR)+'<br />or make partial repairs if you wish.<br /><span class="cap">H</span>ow much will ye spend? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"A","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
+elements["message"].innerHTML=comp$+'<span class="cap">O</span>ch, \'tis a pity to be '+Mf(DM/SC*100)+'% damaged.<br /><span class="cap">W</span>e can fix yer whole ship for '+fnFC(BR)+'<br />or make partial repairs if you wish.<br /><span class="cap">H</span>ow much will ye spend? <span id="input"></span><span id="cursor">_</span>';allow=[9,1150,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1150:
-var amount;if(input[2]=="A"){amount=BR;if(CA<amount){amount=CA;}}else{amount=+input[2];}
+var amount;if(input[2]=="W"){amount=BR;if(CA<amount){amount=CA;}}else{amount=+input[2];}
 if(CA<amount){elements["message"].innerHTML=comp$+t$+', you do not have enough cash!!';fnKeyInput();cursor[0]=null;delay=6;goto=1145;break;}
 WW=Mf(DM*amount/BR);DM=(WW<=DM)?DM-WW:0;CA-=amount;fRP();
 case 1210:
 //braves
 case 1300:
-if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">D</span>o you have business with <span class="cap">E</span>lder <span class="cap">B</span>rother<br /><span class="cap">W</span>u, the moneylender? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"Y","N"];fnKeyInput();break;}
+if(LO==1){elements["message"].innerHTML=comp$+'<span class="cap">M</span>öchtest Du Geschäfte mit dem <span class="cap">E</span>lder <span class="cap">B</span>ruder<br /><span class="cap">W</span>u (dem Geldverleiher) machen? <span id="input"></span><span id="cursor">_</span>';allow=[1,1310,"Y","N"];fnKeyInput();break;}
 else{goto=1500;delay=0;break;}
 case 1310:
 //plight
@@ -273,9 +273,9 @@ case 1360:
 if(DW==0||CA==0){goto=1400;delay=0;break;}
 case 1370:
 elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much do you wish to repay<br />him? <span id="input"></span><span id="cursor">_</span>';
-allow=[9,1380,"A","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
+allow=[9,1380,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 1380:
-var amount=(input[2]=="A"?CA:+input[2]);
+var amount=(input[2]=="W"?CA:+input[2]);
 if(CA>=amount){CA-=amount;DW-=amount;if(DW<0){DW=0;}fRP();}else
 {elements["message"].innerHTML+='<br /><br /><br />'+t$+', you have only '+fnFC(CA)+'<br />in cash.';fnKeyInput();goto=1370;delay=10;break;}
 case 1400:
@@ -306,19 +306,19 @@ case "R-PRICE":
 if(CA>25000&&fR(20)==0){goto="ROBBED";delay=0;break;}
 case "R-ROBBED":
 case "PORT2":
-if(LO==1&&CA+BA>=1e6){mesid=0;allow=[1,"PORT3","B","S","V","T","R","Q"];}else if(LO==1){mesid=1;allow=[1,"PORT3","B","S","V","T","Q"];}else{mesid=2;allow=[1,"PORT3","B","S","Q"];}
-prices=comp$+t$+", present prices per unit here are:<br/>"+
+if(LO==1&&CA+BA>=1e6){mesid=0;allow=[1,"PORT3","K","V","B","F","R","H"];}else if(LO==1){mesid=1;allow=[1,"PORT3","K","V","B","F","H"];}else{mesid=2;allow=[1,"PORT3","K","V","H"];}
+prices=comp$+t$+", die aktuellen Preise pro Einheit sind hier:<br/>"+
 '<table><tr><td class="c10">&nbsp;</td><td class="c40">'+BP[0][0]+': '+CP[0]+'</td><td class="c40">'+BP[1][0]+': '+CP[1]+'</td><td class="c10">&nbsp;</td></tr>'+
-'<tr><td class="c10">&nbsp;</td><td class="c40">'+BP[2][0]+': '+CP[2]+'</td><td class="c40"><span class="cap">G</span>eneral: '+CP[3]+'</td><td class="c10">&nbsp;</td></tr></table><br/>';
+'<tr><td class="c10">&nbsp;</td><td class="c40">'+BP[2][0]+': '+CP[2]+'</td><td class="c40"><span class="cap">G</span>emischt: '+CP[3]+'</td><td class="c10">&nbsp;</td></tr></table><br/>';
 elements["message"].innerHTML=prices+shallI[mesid]+' <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "PORT3":
-if(input[2]=="B"){goto="B1";
-}else if(input[2]=="S"){goto="S1";
-}else if(input[2]=="V"){goto="V1";
-}else if(input[2]=="T"){goto=2620;
-}else if(input[2]=="Q"&&MW<0){goto="OVERLOAD";
-}else if(input[2]=="Q"){goto="Q1";
+if(input[2]=="K"){goto="B1";
+}else if(input[2]=="V"){goto="S1";
+}else if(input[2]=="B"){goto="V1";
+}else if(input[2]=="F"){goto=2620;
+}else if(input[2]=="H"&&MW<0){goto="OVERLOAD";
+}else if(input[2]=="H"){goto="Q1";
 }else if(input[2]=="R"){goto=2695;
 }else{goto="NOTYET";}
 delay=0;break;
@@ -335,74 +335,74 @@ elements["message"].innerHTML=comp$+'<span class="cap">D</span>o you wish to buy
 fnKeyInput();break;
 case "NEWGUN2":
 if(input[2]=="Y"&&MW>=10){CA-=SP;GN+=1;MW-=10;fRP();delay=2;goto="R-NEWGUN";}else if(input[2]=="Y"){
-elements["message"].innerHTML+='<br/><br/><span class="cap">Y</span>our ship would be overburdened, '+t$+"!";
+elements["message"].innerHTML+='<br/><br/><span class="cap">D</span>ein Schiff wäre dann überladen, '+t$+"!";
 fnKeyInput();cursor[0]=null;delay=10;goto="R-NEWGUN";}else{delay=2;goto="R-NEWGUN";}break;
 case "PRICE":
-var i=fR(4);if(fR(2)==0){CP[i]=Mf(CP[i]/5);elements["message"].innerHTML=comp$+t$+'!!&nbsp; The price of '+BP[i][0]+' has dropped to '+CP[i]+'!!';
-}else{CP[i]*=(fR(5)+5);elements["message"].innerHTML=comp$+t$+'!!&nbsp; The price of '+BP[i][0]+' has risen to '+CP[i]+'!!';}
+var i=fR(4);if(fR(2)==0){CP[i]=Mf(CP[i]/5);elements["message"].innerHTML=comp$+t$+'!!&nbsp; Der Preis von '+BP[i][0]+' ist auf '+CP[i]+' gefallen!!';
+}else{CP[i]*=(fR(5)+5);elements["message"].innerHTML=comp$+t$+'!!&nbsp; Der Preis von '+BP[i][0]+' ist auf '+CP[i]+' gestiegen!!';}
 fnKeyInput();delay=10;goto="R-PRICE";break;
 case "ROBBED":
-var i=Mf(CA/1.4);elements["message"].innerHTML=comp$+"You've been beaten up and robbed of "+fnFC(i)+" in cash, "+t$+"!!";CA-=i;elements["CA"].innerHTML=fnFC(CA);
+var i=Mf(CA/1.4);elements["message"].innerHTML=comp$+"Du wurdest verprügelt und "+fnFC(i)+" Bargeld wurden geraubt, "+t$+"!!";CA-=i;elements["CA"].innerHTML=fnFC(CA);
 fnKeyInput();delay=18;goto="R-ROBBED";break;
 case "B1":
-allow=[1,"B2","O","S","A","G"];
-elements["message"].innerHTML=prices+'<span class="cap">W</span>hat do you wish me to buy, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
+allow=[1,"B2","O","S","W","G"];
+elements["message"].innerHTML=prices+'<span class="cap">W</span>as soll ich kaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "B2":
-allow=[6,"B3","A","0","1","2","3","4","5","6","7","8","9"];
-if(input[2]=="O"){item=0;}else if(input[2]=="S"){item=1;}else if(input[2]=="A"){item=2;}else{item=3;}
+allow=[6,"B3","W","0","1","2","3","4","5","6","7","8","9"];
+if(input[2]=="O"){item=0;}else if(input[2]=="V"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
 afford=Mf(CA/CP[item]);
 case "B2a":
-elements["message"].innerHTML=prices+'<span class="cap">H</span>ow much '+BP[item][0]+' shall<br/><span class="cap">I</span> buy, '+t$+'? <span id="input"></span><span id="cursor">_</span>'+
+elements["message"].innerHTML=prices+'<span class="cap">W</span>ieviel '+BP[item][0]+' soll ich<br/>kaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>'+
 '<span class="afford">You can<br/>afford<br/>'+afford+'</span>';
 fnKeyInput();break;
 case "B3":
-var amount=(input[2]=="A"?afford:+input[2]);
+var amount=(input[2]=="W"?afford:+input[2]);
 if(amount<=afford){MW-=amount;elements["MW"].innerHTML=(MW>=0?MW:overload$);CA-=CP[item]*amount;elements["CA"].innerHTML=fnFC(CA);
 ST[1][item]+=amount;elements["h"+item].innerHTML=ST[1][item];goto="PORT2";}else{goto="B2a";}delay=0;break;
 case "S1":
-allow=[1,"S2","O","S","A","G"];
-elements["message"].innerHTML=prices+'<span class="cap">W</span>hat do you wish me to sell, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
+allow=[1,"S2","O","S","W","G"];
+elements["message"].innerHTML=prices+'<span class="cap">W</span>as soll ich verkaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "S2":
-allow=[6,"S3","A","0","1","2","3","4","5","6","7","8","9"];
-if(input[2]=="O"){item=0;}else if(input[2]=="S"){item=1;}else if(input[2]=="A"){item=2;}else{item=3;}
+allow=[6,"S3","W","0","1","2","3","4","5","6","7","8","9"];
+if(input[2]=="O"){item=0;}else if(input[2]=="V"){item=1;}else if(input[2]=="W"){item=2;}else{item=3;}
 case "S2a":
-elements["message"].innerHTML=prices+'<span class="cap">H</span>ow much '+BP[item][0]+' shall<br/><span class="cap">I</span> sell, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
+elements["message"].innerHTML=prices+'<span class="cap">W</span>ieviel '+BP[item][0]+' soll<br/>ich verkaufen, '+t$+'? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "S3":
-var amount=(input[2]=="A"?ST[1][item]:+input[2]);
+var amount=(input[2]=="W"?ST[1][item]:+input[2]);
 if(amount<=ST[1][item]){MW+=amount;elements["MW"].innerHTML=(MW>=0?MW:overload$);CA+=CP[item]*amount;elements["CA"].innerHTML=fnFC(CA);
 ST[1][item]-=amount;elements["h"+item].innerHTML=ST[1][item];goto="PORT2";}else{goto="S2a";}delay=0;break;
 case "OVERLOAD":
-elements["message"].innerHTML=comp$+'<span class="cap">Y</span>our ship is overloaded, '+t$+"!!";
+elements["message"].innerHTML=comp$+'<span class="cap">D</span>ein Schiff ist überladen, '+t$+"!!";
 delay=16;goto="PORT2";fnKeyInput();break;
 case "V1":
-allow=[9,"V2","A","0","1","2","3","4","5","6","7","8","9"];
-elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much will you deposit? <span id="input"></span><span id="cursor">_</span>';
+allow=[9,"V2","W","0","1","2","3","4","5","6","7","8","9"];
+elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel möchtest Du einzahlen? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "V2":
-var amount=(input[2]=="A"?CA:+input[2]);
-if(amount>CA){elements["message"].innerHTML+="<br/><br/>"+t$+", you have only "+fnFC(CA)+"<br/>in cash.";delay=24;goto="V1";fnKeyInput();cursor[0]=null;break;
+var amount=(input[2]=="W"?CA:+input[2]);
+if(amount>CA){elements["message"].innerHTML+="<br/><br/>"+t$+", Du hast nur "+fnFC(CA)+"<br/>Bargeld.";delay=24;goto="V1";fnKeyInput();cursor[0]=null;break;
 }else{CA-=amount;BA+=amount;fRP();}
 case "V3":
-allow=[9,"V4","A","0","1","2","3","4","5","6","7","8","9"];
-elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much will you withdraw? <span id="input"></span><span id="cursor">_</span>';
+allow=[9,"V4","W","0","1","2","3","4","5","6","7","8","9"];
+elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel möchtest Du abheben? <span id="input"></span><span id="cursor">_</span>';
 fnKeyInput();break;
 case "V4":
-var amount=(input[2]=="A"?BA:+input[2]);
-if(amount>BA){elements["message"].innerHTML+="<br/><br/>"+t$+", you have only "+fnFC(BA)+"<br/>in the bank.";delay=24;goto="V3";fnKeyInput();cursor[0]=null;break;
+var amount=(input[2]=="W"?BA:+input[2]);
+if(amount>BA){elements["message"].innerHTML+="<br/><br/>"+t$+", Du hast nur "+fnFC(BA)+"<br/>auf der Bank.";delay=24;goto="V3";fnKeyInput();cursor[0]=null;break;
 }else{BA-=amount;CA+=amount;fRP();}
 goto="PORT2";delay=0;break;
 case 2620:
-W=0;for(wh1=0;wh1<2;wh1++){for(wh2=0;wh2<4;wh2++){W+=ST[wh1][wh2];}}if(W==0){elements["message"].innerHTML=prices+'<span class="cap">Y</span>ou have no cargo, '+t$+".";delay=12;goto="PORT2";fnKeyInput();break;}wh1=2;wh2=0;
+W=0;for(wh1=0;wh1<2;wh1++){for(wh2=0;wh2<4;wh2++){W+=ST[wh1][wh2];}}if(W==0){elements["message"].innerHTML=prices+'<span class="cap">D</span>u hast keine Fracht, '+t$+".";delay=12;goto="PORT2";fnKeyInput();break;}wh1=2;wh2=0;
 case 2622:
 do{wh1--;if(wh1<0){if(wh2<3){wh1=1;wh2++}else{goto="PORT2";delay=0;return;}}}while(ST[wh1][wh2]==0);
 case 2626:
-elements["message"].innerHTML=comp$+'<span class="cap">H</span>ow much '+BP[wh2][0]+' shall <span class="cap">I</span> move<br />'+(wh1==0?'aboard ship':'to the warehouse')+', '+t$+'? <span id="input"></span><span id="cursor">_</span>';allow=[5,2628,"A","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
+elements["message"].innerHTML=comp$+'<span class="cap">W</span>ieviel '+BP[wh2][0]+' soll ich vom<br />'+(wh1==0?'Schiff':'ins Lagerhaus')+' umladen, '+t$+'? <span id="input"></span><span id="cursor">_</span>';allow=[5,2628,"W","0","1","2","3","4","5","6","7","8","9"];fnKeyInput();break;
 case 2628:
-var amount=(input[2]=="A"?ST[wh1][wh2]:+input[2]);
-if(wh1==1&&amount>0&&WC==0){elements["message"].innerHTML+='<br/><br/>Your warehouse is full, '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
+var amount=(input[2]=="W"?ST[wh1][wh2]:+input[2]);
+if(wh1==1&&amount>0&&WC==0){elements["message"].innerHTML+='<br/><br/>Dein Lagerhaus ist voll, '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
 if(wh1==1&&amount>WC){elements["message"].innerHTML+='<br/><br/>Your warehouse will only hold an<br />additional '+fnFC(WC)+', '+t$+'!';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
 if(amount>ST[wh1][wh2]){elements["message"].innerHTML+='<br/><br/>You have only '+fnFC(ST[wh1][wh2])+', '+t$+'.';delay=10;goto=2626;fnKeyInput();cursor[0]=null;break;}
 ST[wh1][wh2]-=amount;if(wh1==0){ST[1][wh2]+=amount;WS-=amount;WC+=amount;MW-=amount;}else{ST[0][wh2]+=amount;WS+=amount;WC-=amount;MW+=amount;}elements['w'+wh2].innerHTML=fnFC(ST[0][wh2]);elements['h'+wh2].innerHTML=fnFC(ST[1][wh2]);elements['WS'].innerHTML=fnFC(WS);elements['WC'].innerHTML=fnFC(WC);elements["MW"].innerHTML=(MW>=0?MW:overload$);
@@ -459,7 +459,7 @@ WW=100-Mf(DM/SC*100);elements["f4"].innerHTML='<span class="cap">C</span>urrent 
 case 5100:
 fnAddShips();
 //elements["SN"].innerHTML is SA
-//allow=false;get=[1,5160,"F","R","T"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
+//allow=false;get=[1,5160,"F","R","F"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
 allow=false;get=[1,5160,"F","R"];delay=(LC==0)?12:4;goto=5190;fnKeyInput();break;
 case 5160:
 LC=input[2];if(LC=='F'){CMD='<span class="cap">F</span>ight';}else if(LC=='R'){CMD='<span class="cap">R</span>un';}else{CMD='<span class="cap">T</span>hrow cargo';}
@@ -554,68 +554,68 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 	<div id="S2">
 		<div class="S2a">
 			&nbsp; &nbsp; <span class="cap">T</span>aipan,<br /><br />
-			<span class="cap">W</span>hat will you name your<br /><br />
-			&nbsp; &nbsp; <span class="cap">F</span>irm: <span id="S2b"></span><br />
+			<span class="cap">W</span>ie nennst Du Deine<br /><br />
+			&nbsp; &nbsp; <span class="cap">F</span>irma: <span id="S2b"></span><br />
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="S2c">----------------------</span>
 		</div>
 	</div>
 	<div id="S3">
 		<div class="S3a">
-			<span class="cap">D</span>o you want to start &nbsp;. &nbsp;. &nbsp;.<br /><br />
-			&nbsp; &nbsp; 1) <span class="cap">W</span>ith cash (and a debt)<br /><br />
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;&gt; or &lt;&lt;<br /><br />
-			&nbsp; &nbsp; 2) <span class="cap">W</span>ith five guns and no cash<br /><br />
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(<span class="cap">B</span>ut no debt!)<br /><br />
+			<span class="cap">M</span>öchtest Du starten &nbsp;. &nbsp;. &nbsp;.<br /><br />
+			&nbsp; &nbsp; 1) <span class="cap">M</span>it Geld (und Schulden)<br /><br />
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;&gt; oder &lt;&lt;<br /><br />
+			&nbsp; &nbsp; 2) <span class="cap">M</span>it fünf Kanonen und ohne Geld<br /><br />
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(<span class="cap">A</span>ber keine Schulden!)<br /><br />
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;? <span id="S3b"></span>
 		</div>
 	</div>
 	<div id="S4">
 		<div class="p1">
-			<span class="cap">F</span>irm: <span id="H" class="cap"></span>, <span class="cap">H</span>ong <span class="cap">K</span>ong
+			<span class="cap">F</span>irma: <span id="H" class="cap"></span>, <span class="cap">H</span>ong <span class="cap">K</span>ong
 		</div>
 		<table>
 			<tr>
 				<td>
 					<div class="p2">
-						<span class="cap">H</span>ong <span class="cap">K</span>ong <span class="cap">W</span>arehouse<br />
+						<span class="cap">H</span>ong <span class="cap">K</span>ong <span class="cap">L</span>agerhalle<br />
 						<table>
 							<tr>
 								<td class="c10">&nbsp;</td>
 								<td class="c30"><span class="cap">O</span>pium</td>
 								<td class="c30"><span id="w0">0</span></td>
-								<td class="c30"><span class="cap">I</span>n use:</td>
+								<td class="c30"><span class="cap">B</span>elegt:</td>
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">S</span>ilk</td>
+								<td class="c30"><span class="cap">S</span>eide</td>
 								<td class="c30"><span id="w1">0</span></td>
 								<td class="c30">&nbsp;<span id="WS">0</span></td>
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">A</span>rms</td>
+								<td class="c30"><span class="cap">W</span>affen</td>
 								<td class="c30"><span id="w2">0</span></td>
-								<td class="c30"><span class="cap">V</span>acant:</td>
+								<td class="c30"><span class="cap">V</span>erfügbar:</td>
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">G</span>eneral</td>
+								<td class="c30"><span class="cap">G</span>emischt</td>
 								<td class="c30"><span id="w3">0</span></td>
-								<td class="c30">&nbsp;<span id="WC">10,000</span></td>
+								<td class="c30">&nbsp;<span id="WC">10.000</span></td>
 							</tr>
 						</table>
 					</div>
 				</td>
 				<td rowspan="2" class="vtop">
 					<div class="p3">
-						<span class="cap">D</span>ate<br />
+						<span class="cap">D</span>atum<br />
 						15 <span class="inverse"><span id="month0" class="cap">J</span><span id="month1">an</span></span> <span id="year">1860</span><br /><br />
-						<span class="cap">L</span>ocation<br />
+						<span class="cap">O</span>rt<br />
 						<span id="location" class="inverse"><span class="cap">H</span>ong <span class="cap">K</span>ong</span><br /><br />
-						<span class="cap">D</span>ebt<br />
+						<span class="cap">S</span>chulden<br />
 						<span id="DW" class="inverse">0</span><br /><br />
-						<span class="cap">S</span>hip status<br />
-						<span id="DM"><span class="cap">P</span>erfect</span>
+						<span class="cap">S</span>chiffsstatus<br />
+						<span id="DM"><span class="cap">P</span>erfekt</span>
 					</div>
 				</td>
 			</tr>
@@ -624,8 +624,8 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 					<div class="p2">
 						<table>
 							<tr>
-								<td colspan="2"><span class="cap">H</span>old <span id="MW">0</span></td>
-								<td class="c30r"><span class="cap">G</span>uns&nbsp;</td>
+								<td colspan="2"><span class="cap">K</span>apazität <span id="MW">0</span></td>
+								<td class="c30r"><span class="cap">K</span>anonen&nbsp;</td>
 								<td class="c30"><span id="GN">0</span></td>
 							</tr>
 							<tr>
@@ -636,19 +636,19 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">S</span>ilk</td>
+								<td class="c30"><span class="cap">S</span>eide</td>
 								<td class="c30"><span id="h1">0</span></td>
 								<td class="c30">&nbsp;</td>
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">A</span>rms</td>
+								<td class="c30"><span class="cap">W</span>affen</td>
 								<td class="c30"><span id="h2">0</span></td>
 								<td class="c30">&nbsp;</td>
 							</tr>
 							<tr>
 								<td class="c10">&nbsp;</td>
-								<td class="c30"><span class="cap">G</span>eneral</td>
+								<td class="c30"><span class="cap">G</span>emischt</td>
 								<td class="c30"><span id="h3">0</span></td>
 								<td class="c30">&nbsp;</td>
 							</tr>
@@ -661,7 +661,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 			<table>
 				<tr>
 					<td class="c50">
-						<span class="cap">C</span>ash: <span id="CA">0</span>
+						<span class="cap">B</span>argeld: <span id="CA">0</span>
 					</td>
 					<td class="c50">
 						<span class="cap">B</span>ank: <span id="BA">0</span>
@@ -674,11 +674,11 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 	</div>
 	<div id="S5">
 		<div class="f0">
-			<div><span id="SN">0</span> ships attacking, <span class="cap">T</span>aipan!</div>
+			<div><span id="SN">0</span> Schiffe greifen an, <span class="cap">T</span>aipan!</div>
 			<div id="f2"></div>
 			<div>&nbsp;</div>
 			<div id="f4"></div>
-			<div class="guns"><span class="cap">W</span>e have<br/><span id="GNs">0</span> guns</div>
+			<div class="guns"><span class="cap">W</span>ir haben<br/><span id="GNs">0</span> Kanonen</div>
 		</div>
 		<div class="sf" id="sf0"></div><div class="sf" id="sf1"></div><div class="sf" id="sf2"></div><div class="sf" id="sf3"></div><div class="sf" id="sf4"></div>
 		<div id="plus"></div>
@@ -686,24 +686,24 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 		<div id="ef"></div>
 	</div>
 	<div id="S6">
-		<span class="cap">Y</span>our final status:
+		<span class="cap">D</span>ein endgültiger Status:
 		<br /><br />
-		<span class="cap">N</span>et <span class="cap">C</span>ash: <span id="CAf">0</span>
+		<span class="cap">N</span>et <span class="cap">B</span>argeld: <span id="CAf">0</span>
 		<br /><br />
-		<span class="cap">S</span>hip size: <span id="SCf">0</span> units with <span id="GNf">0</span> guns
+		<span class="cap">S</span>chiffsgröße: <span id="SCf">0</span> Einheiten mit <span id="GNf">0</span> Kanonen
 		<br /><br />
-		<span class="cap">Y</span>ou traded for <span id="YEARSf">0</span> and <span id="MONTHSf">0</span>
+		<span class="cap">D</span>hast <span id="YEARSf">0</span> gehandelt und <span id="MONTHSf">0</span>
 		<br /><br />
-		<span class="inverse"><span class="cap">Y</span>our score is <span id="SCOREf">0</span>.</span>
+		<span class="inverse"><span class="cap">D</span>eine Punktzahl ist <span id="SCOREf">0</span>.</span>
 		<br /><br /><br /><br />
-		<span class="cap">Y</span>our <span class="cap">R</span>ating:<br />
+		<span class="cap">D</span>eine <span class="cap">W</span>ertung:<br />
 		<div class="scorecard"><table>
 			<tr>
 				<td class="c50">
 					<span id="SCORE5f"><span class="cap">M</span>a <span class="cap">T</span>su</span>
 				</td>
 				<td class="c50r">
-					50,000 and over&nbsp;
+					50.000 und höher&nbsp;
 				</td>
 			</tr>
 			<tr>
@@ -711,7 +711,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 					<span id="SCORE4f"><span class="cap">M</span>aster <span class="cap">T</span>aipan</span>
 				</td>
 				<td class="c50r">
-					8,000 to 49,999
+					8.000 bis 49.999
 				</td>
 			</tr>
 			<tr>
@@ -719,7 +719,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 					<span id="SCORE3f"><span class="cap">T</span>aipan</span>
 				</td>
 				<td class="c50r">
-					1,000 to &nbsp;7,999
+					1.000 bis &nbsp;7.999
 				</td>
 			</tr>
 			<tr>
@@ -727,7 +727,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 					<span id="SCORE2f"><span class="cap">C</span>ompradore</span>
 				</td>
 				<td class="c50r">
-					500 to &nbsp; &nbsp;999
+					500 bis &nbsp; &nbsp;999
 				</td>
 			</tr>
 			<tr>
@@ -735,23 +735,13 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 					<span id="SCORE1f"><span class="cap">G</span>alley <span class="cap">H</span>and</span>
 				</td>
 				<td class="c50r">
-					less than 500
+					weniger als 500
 				</td>
 			</tr>
 		</table></div>
 		<br /><br />
 		<span class="cap">C</span>lick refresh to play again.
 		<br /><br /><br /><br />
-		<span class="cap">P</span>lease consider donating $1.00 to sponsor further development and to keep this game online and free.
-		<span class="cap">Y</span>ou'll feel good, and $1.00 is much cheaper than the original.
-		<span class="cap">P</span>lus, if you do, I'll give you the secret link to the negative interest version!
-		<br /><br />
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post"><div>
-		<input type="hidden" name="cmd" value="_s-xclick" />
-		<input type="hidden" name="hosted_button_id" value="W6WQ84J9GM2CA" />
-		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-		<img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-		</div></form>
 	</div>
 </div>
 </body>
