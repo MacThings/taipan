@@ -20,6 +20,7 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <segue destination="Tpb-Kt-dB8" kind="show" id="QzE-EY-7On"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -93,7 +94,6 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Taipan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" userLabel="Taipan">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="130" y="660" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -303,7 +303,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="game_speed" destination="gux-Wy-gy5" id="Qbb-aX-yS0"/>
                         <outlet property="start_button" destination="Xlf-3h-P7C" id="nVr-hc-e6E"/>
                         <outlet property="title_picture" destination="xi2-Of-tBf" id="diM-Wb-o6r"/>
                     </connections>
@@ -326,9 +325,52 @@
             </objects>
             <point key="canvasLocation" x="-121" y="1443"/>
         </scene>
+        <!--About-->
+        <scene sceneID="j8o-Aw-cmw">
+            <objects>
+                <viewController title="About" id="Tpb-Kt-dB8" customClass="About" customModule="Taipan" sceneMemberID="viewController">
+                    <view key="view" id="fos-4l-mAS">
+                        <rect key="frame" x="0.0" y="0.0" width="313" height="340"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vL4-7A-iW8">
+                                <rect key="frame" x="-2" y="44" width="317" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="uj8-fU-8Kh">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="beP-cU-99E">
+                                <rect key="frame" x="-2" y="20" width="317" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="Yg1-94-Ura">
+                                    <font key="font" metaFont="systemBold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-B8-j6m">
+                                <rect key="frame" x="28" y="68" width="257" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Taipan" id="MAk-eN-4Fj"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="copyright" destination="beP-cU-99E" id="t18-gH-qXJ"/>
+                        <outlet property="version" destination="vL4-7A-iW8" id="vfN-b4-9nt"/>
+                    </connections>
+                </viewController>
+                <customObject id="nRv-e1-rl5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492.5" y="219"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Ship" width="418" height="288"/>
+        <image name="Taipan" width="1024" height="1024"/>
         <image name="Title" width="628" height="586"/>
     </resources>
 </document>

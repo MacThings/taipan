@@ -85,6 +85,9 @@
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "Fenster";
 
+/* Class = "NSViewController"; title = "About"; ObjectID = "Tpb-Kt-dB8"; */
+"Tpb-Kt-dB8.title" = "Über";
+
 /* Class = "NSMenu"; title = "Taipan"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Taipan";
 
