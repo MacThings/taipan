@@ -467,7 +467,7 @@ elements["f2"].innerHTML='<span class="cap">Y</span>our orders are to: '+CMD;
 case 5190:
 if(LC=='R'){goto=5200;}else if(LC=='F'){goto=5300;}else if(LC=='T'){goto=5400;}
 //else{elements["f4"].innerHTML=t$+', what shall we do?? (Fight, Run, Throw cargo)';}delay=0;break;
-else{elements["f4"].innerHTML=t$+', what shall we do?? (Fight, Run)';}delay=0;break;
+else{elements["f4"].innerHTML=t$+', what shall we do?? (<span class="cap">F</span>ight, <span class="cap">R</span>un)';}delay=0;break;
 case 5200:
 get=false;elements["f4"].innerHTML='<span class="cap">A</span>ye, we\'ll run, '+t$+'!';fnKeyInput();delay=4;goto=5210;break;
 case 5210:
@@ -740,7 +740,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 			</tr>
 		</table></div>
 		<br /><br />
-		<span class="cap">C</span>lick refresh to play again.
+		<span class="cap">C</span>lick restart game to play again.
 		<br /><br /><br /><br />
 </div>
 </body>
