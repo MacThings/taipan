@@ -12,19 +12,31 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
+        let lc = Locale.current.languageCode
+        
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
         if fontcheck == nil{
             UserDefaults.standard.set("Taipan", forKey: "Font")
         }
         let speedcheck = UserDefaults.standard.string(forKey: "Speed")
         if speedcheck == nil{
+            if lc == "de"{
+                UserDefaults.standard.set("Traditionell", forKey: "Speed")
+            } else {
             UserDefaults.standard.set("Traditional", forKey: "Speed")
+            }
         }
         let languagecheck = UserDefaults.standard.string(forKey: "Language")
         if languagecheck == nil{
+            if lc == "de"{
+                UserDefaults.standard.set("Englisch", forKey: "Language")
+            } else {
             UserDefaults.standard.set("English", forKey: "Language")
+            }
         }
-    }
+     }
     
     @IBAction func start_game(_ sender: Any) {
         title_picture.isHidden = true

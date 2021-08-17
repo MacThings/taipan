@@ -125,15 +125,15 @@
                             <scrollView hidden="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBa-th-m4v">
                                 <rect key="frame" x="9" y="645" width="703" height="76"/>
                                 <clipView key="contentView" drawsBackground="NO" id="tyC-yL-tai">
-                                    <rect key="frame" x="1" y="1" width="686" height="74"/>
+                                    <rect key="frame" x="1" y="1" width="701" height="74"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="cyk-4N-cbC">
-                                            <rect key="frame" x="0.0" y="0.0" width="686" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="701" height="74"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="686" height="74"/>
+                                            <size key="minSize" width="701" height="74"/>
                                             <size key="maxSize" width="904" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -147,7 +147,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="POu-tL-gS6">
-                                    <rect key="frame" x="687" y="1" width="15" height="74"/>
+                                    <rect key="frame" x="686" y="1" width="16" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -205,7 +205,7 @@
                                                 <menu key="menu" id="HYr-F6-bGR">
                                                     <items>
                                                         <menuItem title="English" state="on" id="atf-5b-ElM"/>
-                                                        <menuItem title="German" id="vtJ-2p-Eaf"/>
+                                                        <menuItem title="German" tag="1" id="vtJ-2p-Eaf"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
@@ -231,10 +231,10 @@
                                                 <menu key="menu" id="yUW-bK-GKG">
                                                     <items>
                                                         <menuItem title="Traditional" state="on" id="aeW-VW-Ln2"/>
-                                                        <menuItem title="2x" id="6Rf-Po-JSw"/>
-                                                        <menuItem title="3x" id="kMs-Ha-SvE"/>
-                                                        <menuItem title="4x" id="9G9-tn-Fyy"/>
-                                                        <menuItem title="5x" id="Msb-dH-5M1"/>
+                                                        <menuItem title="2x" tag="1" id="6Rf-Po-JSw"/>
+                                                        <menuItem title="3x" tag="2" id="kMs-Ha-SvE"/>
+                                                        <menuItem title="4x" tag="3" id="9G9-tn-Fyy"/>
+                                                        <menuItem title="5x" tag="4" id="Msb-dH-5M1"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
