@@ -26,6 +26,7 @@
 		2AA92F6326CBC66A00E87E19 /* dm10.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4926CBC63200E87E19 /* dm10.gif */; };
 		2AA92F6426CBC66A00E87E19 /* dm8.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4A26CBC63200E87E19 /* dm8.gif */; };
 		2AA92F6526CBC66A00E87E19 /* ship.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4B26CBC63200E87E19 /* ship.gif */; };
+		2AA92F6D26CBD78400E87E19 /* dm0.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F6926CBD77600E87E19 /* dm0.gif */; };
 		E5FE085A1DDDACB100DB19B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */; };
 		E5FE085C1DDDACB100DB19B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE085B1DDDACB100DB19B9 /* ViewController.swift */; };
 		E5FE085E1DDDACB100DB19B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5FE085D1DDDACB100DB19B9 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 			dstPath = Taipan/pics;
 			dstSubfolderSpec = 7;
 			files = (
+				2AA92F6D26CBD78400E87E19 /* dm0.gif in Copy Taipan Pics */,
 				2AA92F5B26CBC66A00E87E19 /* dm1.gif in Copy Taipan Pics */,
 				2AA92F5C26CBC66A00E87E19 /* dm3.gif in Copy Taipan Pics */,
 				2AA92F5D26CBC66A00E87E19 /* dm2.gif in Copy Taipan Pics */,
@@ -103,6 +105,7 @@
 		2AA92F4926CBC63200E87E19 /* dm10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm10.gif; sourceTree = "<group>"; };
 		2AA92F4A26CBC63200E87E19 /* dm8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm8.gif; sourceTree = "<group>"; };
 		2AA92F4B26CBC63200E87E19 /* ship.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ship.gif; sourceTree = "<group>"; };
+		2AA92F6926CBD77600E87E19 /* dm0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm0.gif; sourceTree = "<group>"; };
 		E5FE08561DDDACB100DB19B9 /* Taipan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taipan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5FE085B1DDDACB100DB19B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		2AA92F4026CBC63200E87E19 /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				2AA92F6926CBD77600E87E19 /* dm0.gif */,
 				2AA92F4126CBC63200E87E19 /* dm1.gif */,
 				2AA92F4226CBC63200E87E19 /* dm3.gif */,
 				2AA92F4326CBC63200E87E19 /* dm2.gif */,
