@@ -492,7 +492,7 @@ var img=document.createElement("img");img.setAttribute("class","dmg");img.classN
 AM[i][1]+=fR(30)+10;if(AM[i][1]>AM[i][0]){AM[i][0]=0;AM[i][1]=0;SN--;SS--;SK++;fnSink(i,0,(fR(20)==0?40:20));break;}
 fnKeyInput();delay=2;goto=5320;break;
 case 5340:
-if(SK){elements["f4"].innerHTML='<span class="cap">W</span>ir haben '+SK+' von den Mistkerlen erledigt, '+t$+'!';}else{elements["f4"].innerHTML='<span class="cap">g</span>etroffen, aber nicht versenkt, '+t$+'!';}fnKeyInput();delay=4;goto=5360;break;
+if(SK){elements["f4"].innerHTML='<span class="cap">W</span>ir haben '+SK+' von den Mistkerlen erledigt, '+t$+'!';}else{elements["f4"].innerHTML='<span class="cap">G</span>etroffen, aber nicht versenkt, '+t$+'!';}fnKeyInput();delay=4;goto=5360;break;
 case 5360:
 if(fR(S0)<SN*.6/F1||SN==0||SN==S0||SN<3){fnKeyInput();delay=0;goto=5500;break;}
 W=Mf(fR(SN/3/F1)+1);SN-=W;elements["SN"].innerHTML=SN;if(SS>SN){fnRemoveShips();}elements["f4"].innerHTML=W+'ir sind entkommen, '+t$+'!';fnKeyInput();delay=4;goto=5500;break;
