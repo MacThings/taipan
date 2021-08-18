@@ -8,6 +8,7 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var title_picture: NSImageView!
     @IBOutlet weak var start_button: NSButton!
+    @IBOutlet weak var taipan_header: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,8 @@ class ViewController: NSViewController {
         
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
         let lc = Locale.current.languageCode
+        
+        taipan_header.textColor = NSColor(calibratedRed: 0.5, green: 0.0, blue: 0.3, alpha: 1)
         
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
         if fontcheck == nil{
@@ -48,7 +51,7 @@ class ViewController: NSViewController {
     
     @IBAction func start_game(_ sender: Any) {
         title_picture.isHidden = true
-        start_button.title = NSLocalizedString("Restart game", comment: "")
+        start_button.title = NSLocalizedString("Reset", comment: "")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.start_game])
     }
 }
