@@ -15,6 +15,19 @@
 		2A7CB16826CAE42900B1A97B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB16626CAE42900B1A97B /* InfoPlist.strings */; };
 		2A7CB16B26CAE42900B1A97B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB16926CAE42900B1A97B /* Localizable.strings */; };
 		2A7CB16E26CAEC2700B1A97B /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB16D26CAEC2700B1A97B /* About.swift */; };
+		2A98472626CD2ADD00DDED5E /* ship.gif in Copy Taipan Pics BW */ = {isa = PBXBuildFile; fileRef = 2A98470926CD2AA400DDED5E /* ship.gif */; };
+		2A98473026CD2C6800DDED5E /* ship.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98472B26CD2C3700DDED5E /* ship.gif */; };
+		2A98474D26CD2DD300DDED5E /* dm0.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473A26CD2DB800DDED5E /* dm0.gif */; };
+		2A98474E26CD2DD300DDED5E /* dm1.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473426CD2DB700DDED5E /* dm1.gif */; };
+		2A98474F26CD2DD300DDED5E /* dm2.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473B26CD2DB800DDED5E /* dm2.gif */; };
+		2A98475026CD2DD300DDED5E /* dm3.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473626CD2DB700DDED5E /* dm3.gif */; };
+		2A98475126CD2DD300DDED5E /* dm4.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473826CD2DB800DDED5E /* dm4.gif */; };
+		2A98475226CD2DD300DDED5E /* dm5.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473C26CD2DB800DDED5E /* dm5.gif */; };
+		2A98475326CD2DD300DDED5E /* dm6.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473526CD2DB700DDED5E /* dm6.gif */; };
+		2A98475426CD2DD300DDED5E /* dm7.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473926CD2DB800DDED5E /* dm7.gif */; };
+		2A98475526CD2DD300DDED5E /* dm8.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473D26CD2DB800DDED5E /* dm8.gif */; };
+		2A98475626CD2DD300DDED5E /* dm9.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473326CD2DB700DDED5E /* dm9.gif */; };
+		2A98475726CD2DD300DDED5E /* dm10.gif in Copy Taipan Pics BW inverse */ = {isa = PBXBuildFile; fileRef = 2A98473726CD2DB700DDED5E /* dm10.gif */; };
 		2AA92F5B26CBC66A00E87E19 /* dm1.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4126CBC63200E87E19 /* dm1.gif */; };
 		2AA92F5C26CBC66A00E87E19 /* dm3.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4226CBC63200E87E19 /* dm3.gif */; };
 		2AA92F5D26CBC66A00E87E19 /* dm2.gif in Copy Taipan Pics */ = {isa = PBXBuildFile; fileRef = 2AA92F4326CBC63200E87E19 /* dm2.gif */; };
@@ -59,6 +72,39 @@
 			name = "Copy  Taipan Fonts";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A98471A26CD2AC100DDED5E /* Copy Taipan Pics BW */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Taipan/picsbw;
+			dstSubfolderSpec = 7;
+			files = (
+				2A98472626CD2ADD00DDED5E /* ship.gif in Copy Taipan Pics BW */,
+			);
+			name = "Copy Taipan Pics BW";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A98472F26CD2C4A00DDED5E /* Copy Taipan Pics BW inverse */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Taipan/picsbwi;
+			dstSubfolderSpec = 7;
+			files = (
+				2A98474D26CD2DD300DDED5E /* dm0.gif in Copy Taipan Pics BW inverse */,
+				2A98474E26CD2DD300DDED5E /* dm1.gif in Copy Taipan Pics BW inverse */,
+				2A98474F26CD2DD300DDED5E /* dm2.gif in Copy Taipan Pics BW inverse */,
+				2A98475026CD2DD300DDED5E /* dm3.gif in Copy Taipan Pics BW inverse */,
+				2A98475126CD2DD300DDED5E /* dm4.gif in Copy Taipan Pics BW inverse */,
+				2A98475226CD2DD300DDED5E /* dm5.gif in Copy Taipan Pics BW inverse */,
+				2A98475326CD2DD300DDED5E /* dm6.gif in Copy Taipan Pics BW inverse */,
+				2A98475426CD2DD300DDED5E /* dm7.gif in Copy Taipan Pics BW inverse */,
+				2A98475526CD2DD300DDED5E /* dm8.gif in Copy Taipan Pics BW inverse */,
+				2A98475626CD2DD300DDED5E /* dm9.gif in Copy Taipan Pics BW inverse */,
+				2A98475726CD2DD300DDED5E /* dm10.gif in Copy Taipan Pics BW inverse */,
+				2A98473026CD2C6800DDED5E /* ship.gif in Copy Taipan Pics BW inverse */,
+			);
+			name = "Copy Taipan Pics BW inverse";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AA92F5A26CBC64B00E87E19 /* Copy Taipan Pics */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +140,19 @@
 		2A7CB16A26CAE42900B1A97B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A7CB16D26CAEC2700B1A97B /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		2A7CB17126CAEDC100B1A97B /* Taipan.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Taipan.psd; sourceTree = SOURCE_ROOT; };
+		2A98470926CD2AA400DDED5E /* ship.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ship.gif; sourceTree = "<group>"; };
+		2A98472B26CD2C3700DDED5E /* ship.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ship.gif; sourceTree = "<group>"; };
+		2A98473326CD2DB700DDED5E /* dm9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm9.gif; sourceTree = "<group>"; };
+		2A98473426CD2DB700DDED5E /* dm1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm1.gif; sourceTree = "<group>"; };
+		2A98473526CD2DB700DDED5E /* dm6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm6.gif; sourceTree = "<group>"; };
+		2A98473626CD2DB700DDED5E /* dm3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm3.gif; sourceTree = "<group>"; };
+		2A98473726CD2DB700DDED5E /* dm10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm10.gif; sourceTree = "<group>"; };
+		2A98473826CD2DB800DDED5E /* dm4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm4.gif; sourceTree = "<group>"; };
+		2A98473926CD2DB800DDED5E /* dm7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm7.gif; sourceTree = "<group>"; };
+		2A98473A26CD2DB800DDED5E /* dm0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm0.gif; sourceTree = "<group>"; };
+		2A98473B26CD2DB800DDED5E /* dm2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm2.gif; sourceTree = "<group>"; };
+		2A98473C26CD2DB800DDED5E /* dm5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm5.gif; sourceTree = "<group>"; };
+		2A98473D26CD2DB800DDED5E /* dm8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm8.gif; sourceTree = "<group>"; };
 		2AA92F4126CBC63200E87E19 /* dm1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm1.gif; sourceTree = "<group>"; };
 		2AA92F4226CBC63200E87E19 /* dm3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm3.gif; sourceTree = "<group>"; };
 		2AA92F4326CBC63200E87E19 /* dm2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm2.gif; sourceTree = "<group>"; };
@@ -133,6 +192,8 @@
 				2A3358CA26C9CF3C003BC9D2 /* Taipan.html */,
 				2A7CB15226CA79AC00B1A97B /* Taipan_DE.html */,
 				2AA92F4026CBC63200E87E19 /* pics */,
+				2A98472A26CD2C3700DDED5E /* picsbwi */,
+				2A9846FD26CD2AA400DDED5E /* picsbw */,
 				2A3358CC26C9CF3C003BC9D2 /* fonts */,
 			);
 			path = Taipan;
@@ -145,6 +206,34 @@
 				2A3358CE26C9CF3C003BC9D2 /* MegaMicro.woff2 */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		2A9846FD26CD2AA400DDED5E /* picsbw */ = {
+			isa = PBXGroup;
+			children = (
+				2A98470926CD2AA400DDED5E /* ship.gif */,
+			);
+			name = picsbw;
+			path = Taipan/Taipan/picsbw;
+			sourceTree = SOURCE_ROOT;
+		};
+		2A98472A26CD2C3700DDED5E /* picsbwi */ = {
+			isa = PBXGroup;
+			children = (
+				2A98472B26CD2C3700DDED5E /* ship.gif */,
+				2A98473A26CD2DB800DDED5E /* dm0.gif */,
+				2A98473426CD2DB700DDED5E /* dm1.gif */,
+				2A98473B26CD2DB800DDED5E /* dm2.gif */,
+				2A98473626CD2DB700DDED5E /* dm3.gif */,
+				2A98473826CD2DB800DDED5E /* dm4.gif */,
+				2A98473C26CD2DB800DDED5E /* dm5.gif */,
+				2A98473526CD2DB700DDED5E /* dm6.gif */,
+				2A98473926CD2DB800DDED5E /* dm7.gif */,
+				2A98473D26CD2DB800DDED5E /* dm8.gif */,
+				2A98473326CD2DB700DDED5E /* dm9.gif */,
+				2A98473726CD2DB700DDED5E /* dm10.gif */,
+			);
+			path = picsbwi;
 			sourceTree = "<group>";
 		};
 		2AA92F4026CBC63200E87E19 /* pics */ = {
@@ -214,6 +303,8 @@
 				2A3358D526C9CF57003BC9D2 /* Copy Taipan Files */,
 				2A3358DA26C9CF6B003BC9D2 /* Copy  Taipan Fonts */,
 				2AA92F5A26CBC64B00E87E19 /* Copy Taipan Pics */,
+				2A98471A26CD2AC100DDED5E /* Copy Taipan Pics BW */,
+				2A98472F26CD2C4A00DDED5E /* Copy Taipan Pics BW inverse */,
 				2A7CB15A26CADF9D00B1A97B /* Zip and send to homeshare */,
 			);
 			buildRules = (

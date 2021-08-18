@@ -1,6 +1,9 @@
 /* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "Taipan";
 
+/* Class = "NSMenuItem"; title = "B/W"; ObjectID = "3xe-Kj-nXT"; */
+"3xe-Kj-nXT.title" = "S/W";
+
 /* Class = "NSMenuItem"; title = "Quit Taipan"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "Taipan beenden";
 
@@ -18,6 +21,9 @@
 
 /* Class = "NSMenuItem"; title = "Traditional"; ObjectID = "aeW-VW-Ln2"; */
 "aeW-VW-Ln2.title" = "Traditionell";
+
+/* Class = "NSMenuItem"; title = "B/W inverse"; ObjectID = "AgT-Wl-UoT"; */
+"AgT-Wl-UoT.title" = "S/W invers";
 
 /* Class = "NSMenuItem"; title = "English"; ObjectID = "atf-5b-ElM"; */
 "atf-5b-ElM.title" = "Englisch";
@@ -61,6 +67,9 @@
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
 "LE2-aR-0XJ.title" = "Alle nach vorne holen";
 
+/* Class = "NSTextFieldCell"; title = "Color"; ObjectID = "mhh-15-FGe"; */
+"mhh-15-FGe.title" = "Farbe";
+
 /* Class = "NSMenuItem"; title = "5x"; ObjectID = "Msb-dH-5M1"; */
 "Msb-dH-5M1.title" = "5x";
 
@@ -99,4 +108,7 @@
 
 /* Class = "NSViewController"; title = "Taipan"; ObjectID = "XfG-lQ-9wD"; */
 "XfG-lQ-9wD.title" = "Taipan";
+
+/* Class = "NSMenuItem"; title = "Traditional"; ObjectID = "YkZ-ze-XsZ"; */
+"YkZ-ze-XsZ.title" = "Traditionell";
 
