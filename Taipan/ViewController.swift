@@ -20,6 +20,14 @@ class ViewController: NSViewController {
         if fontcheck == nil{
             UserDefaults.standard.set("Taipan", forKey: "Font")
         }
+        let colorcheck = UserDefaults.standard.string(forKey: "Color")
+        if colorcheck == nil{
+            if lc == "de"{
+                UserDefaults.standard.set("Traditionell", forKey: "Color")
+            } else {
+            UserDefaults.standard.set("Traditional", forKey: "Color")
+            }
+        }
         let speedcheck = UserDefaults.standard.string(forKey: "Speed")
         if speedcheck == nil{
             if lc == "de"{

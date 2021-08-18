@@ -48,6 +48,17 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
             shell(cmd: "sed -ib '9d;10d;58d' /private/tmp/Taipan/Taipan.html")
         }
         
+        let colorcheck = UserDefaults.standard.string(forKey: "Color")
+        if colorcheck!.contains("inv") {
+            print("inv")
+            shell(cmd: "sed -ib 's/000000/ffffff/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib 's/0f0/000000/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib 's/background-color: #000000/background-color: #cccccc/g' /private/tmp/Taipan/Taipan.html")
+        } else if colorcheck!.contains("W") {
+            print("bw")
+            shell(cmd: "sed -ib 's/0f0/fff/g' /private/tmp/Taipan/Taipan.html")
+        }
+        
         let alert_check = UserDefaults.standard.bool(forKey: "AlertShown")
         if alert_check == false {
         let alert = NSAlert()
