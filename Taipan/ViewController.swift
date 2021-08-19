@@ -71,7 +71,6 @@ class ViewController: NSViewController {
         self.toggle_switch.image = NSImage(named: "switch_off")
         self.power_led.image = NSImage(named: "NSStatusUnavailable")
         UserDefaults.standard.set(false, forKey: "SwitchOn")
-        self.reset_button.isEnabled = false
      }
     
     @IBAction func crt_look(_ sender: Any) {
@@ -96,19 +95,15 @@ class ViewController: NSViewController {
             self.power_led.image = NSImage(named: "NSStatusAvailable")
             UserDefaults.standard.set(true, forKey: "SwitchOn")
             if switchcheck == false {
-
                 player.play()
-            self.reset_button.isEnabled = true
-            self.crt_black_screen.isHidden = true
-            self.container_view.isHidden = false
+                self.crt_black_screen.isHidden = true
+                self.container_view.isHidden = false
             }
-            self.reset_button.isEnabled = true
         } else {
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
             self.toggle_switch.image = NSImage(named: "switch_off")
             UserDefaults.standard.set(false, forKey: "SwitchOn")
-            self.reset_button.isEnabled = false
             self.crt_black_screen.isHidden = false
             self.container_view.isHidden = true
             
@@ -116,7 +111,13 @@ class ViewController: NSViewController {
     }
     
     @IBAction func reset_button(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "click_sound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+        let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
+        if switchcheck == true {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.toggle_switch ?? ""])
+        }
     }
     
 }
