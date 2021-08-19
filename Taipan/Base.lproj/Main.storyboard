@@ -198,7 +198,7 @@
                                             <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </box>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNw-dz-kps" userLabel="CRT Scanlines">
-                                            <rect key="frame" x="27" y="17" width="617" height="607"/>
+                                            <rect key="frame" x="25" y="17" width="623" height="607"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="crt" id="nnL-dT-eZh"/>
                                         </imageView>
@@ -475,7 +475,7 @@
     <resources>
         <image name="Ship" width="418" height="288"/>
         <image name="Taipan" width="1125" height="1125"/>
-        <image name="crt" width="611" height="601"/>
+        <image name="crt" width="615" height="601"/>
         <image name="crt-bezel" width="675" height="650"/>
         <image name="reset-button" width="100" height="100"/>
     </resources>
