@@ -125,15 +125,15 @@
                             <scrollView hidden="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBa-th-m4v">
                                 <rect key="frame" x="9" y="645" width="703" height="76"/>
                                 <clipView key="contentView" drawsBackground="NO" id="tyC-yL-tai">
-                                    <rect key="frame" x="1" y="1" width="701" height="74"/>
+                                    <rect key="frame" x="1" y="1" width="686" height="74"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="cyk-4N-cbC">
-                                            <rect key="frame" x="0.0" y="0.0" width="701" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="686" height="74"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="701" height="74"/>
+                                            <size key="minSize" width="686" height="74"/>
                                             <size key="maxSize" width="904" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -147,7 +147,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="POu-tL-gS6">
-                                    <rect key="frame" x="686" y="1" width="16" height="74"/>
+                                    <rect key="frame" x="687" y="1" width="15" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -294,12 +294,15 @@
                                         <popUpButton focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMB-0w-pqt">
                                             <rect key="frame" x="311" y="6" width="98" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="roundTextured" title="Traditional" bezelStyle="texturedRounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="YkZ-ze-XsZ" id="3O3-Gb-9ou">
+                                            <popUpButtonCell key="cell" type="roundTextured" title="Green" bezelStyle="texturedRounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" selectedItem="YkZ-ze-XsZ" id="3O3-Gb-9ou">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <menu key="menu" id="mzT-MK-4uH">
                                                     <items>
-                                                        <menuItem title="Traditional" state="on" id="YkZ-ze-XsZ"/>
+                                                        <menuItem title="Green" state="on" id="YkZ-ze-XsZ"/>
+                                                        <menuItem title="Green inverse" id="0Dv-aC-UJv"/>
+                                                        <menuItem title="Amber" id="RYp-xJ-stI"/>
+                                                        <menuItem title="Amber inverse" id="Hv6-zN-gVn"/>
                                                         <menuItem title="B/W" id="3xe-Kj-nXT"/>
                                                         <menuItem title="B/W inverse" id="AgT-Wl-UoT"/>
                                                     </items>
@@ -335,6 +338,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="color_selector" destination="gMB-0w-pqt" id="nJR-yo-B40"/>
                         <outlet property="start_button" destination="HJf-NE-kQ7" id="D8f-VF-zVb"/>
                         <outlet property="taipan_header" destination="MyK-c4-3T4" id="ddi-zx-YDx"/>
                         <outlet property="title_picture" destination="xi2-Of-tBf" id="diM-Wb-o6r"/>

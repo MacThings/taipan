@@ -49,19 +49,31 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         }
         
         let colorcheck = UserDefaults.standard.string(forKey: "Color")
-        if colorcheck!.contains("inv") {
-            print("inv")
+        
+        //  Green inverse
+        if colorcheck == "Green inverse" || colorcheck == "Grün invers" {
+           print("Green inverse")
+        //  Amber
+        } else if colorcheck == "Amber" || colorcheck == "Bernstein" {
+            print("Amber")
+        //  Amber inverse
+        } else if colorcheck == "Amber inverse" || colorcheck == "Bernstein invers" {
+            print("Amber inverse")
+        //  B/W
+        } else if colorcheck == "B/W" || colorcheck == "S/W" {
+            print("B/W")
+            shell(cmd: "sed -ib 's/0f0/fff/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib 's/\"pics/\"picsbw/g' /private/tmp/Taipan/Taipan.html")
+        //  B/W inverse
+        } else if colorcheck == "B/W invers" || colorcheck == "S/W invers" {
+            print("B/W inverse")
             shell(cmd: "sed -ib 's/000000/ffffff/g' /private/tmp/Taipan/Taipan.html")
             shell(cmd: "sed -ib 's/0f0/000000/g' /private/tmp/Taipan/Taipan.html")
             shell(cmd: "sed -ib 's/background-color: #000000/background-color: #cccccc/g' /private/tmp/Taipan/Taipan.html")
             shell(cmd: "sed -ib 's/\"pics/\"picsbwi/g' /private/tmp/Taipan/Taipan.html")
             shell(cmd: "sed -ib 's/pics\\/dm/picsbwi\\/dm/g' /private/tmp/Taipan/Taipan.html")
-            
-        } else if colorcheck!.contains("W") {
-            print("bw")
-            shell(cmd: "sed -ib 's/0f0/fff/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsbw/g' /private/tmp/Taipan/Taipan.html")
         }
+        
         
         let alert_check = UserDefaults.standard.bool(forKey: "AlertShown")
         if alert_check == false {

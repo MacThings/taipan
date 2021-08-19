@@ -9,6 +9,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var title_picture: NSImageView!
     @IBOutlet weak var start_button: NSButton!
     @IBOutlet weak var taipan_header: NSTextField!
+    @IBOutlet weak var color_selector: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +18,6 @@ class ViewController: NSViewController {
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
         let lc = Locale.current.languageCode
         
-        taipan_header.textColor = NSColor(calibratedRed: 0.5, green: 0.0, blue: 0.3, alpha: 1)
-        
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
         if fontcheck == nil{
             UserDefaults.standard.set("Taipan", forKey: "Font")
@@ -26,9 +25,9 @@ class ViewController: NSViewController {
         let colorcheck = UserDefaults.standard.string(forKey: "Color")
         if colorcheck == nil{
             if lc == "de"{
-                UserDefaults.standard.set("Traditionell", forKey: "Color")
+                UserDefaults.standard.set("Grün", forKey: "Color")
             } else {
-            UserDefaults.standard.set("Traditional", forKey: "Color")
+            UserDefaults.standard.set("Green", forKey: "Color")
             }
         }
         let speedcheck = UserDefaults.standard.string(forKey: "Speed")
