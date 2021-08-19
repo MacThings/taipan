@@ -9,6 +9,8 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
 
     var myWebView: WKWebView!
     
+    let filename = "/private/tmp/Taipan/Taipan.html"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(
@@ -50,28 +52,61 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         
         let colorcheck = UserDefaults.standard.string(forKey: "Color")
         
-        //  Green inverse
         if colorcheck == "Green inverse" || colorcheck == "Grün invers" {
-            print("Green inverse")
-            shell(cmd: "sed -ib -e 's/000000/000001/g' -e 's/0f0/000000/g' -e 's/000001/0f0/g' -e 's/pics\\/dm/picsi\\/dm/g' -e 's/\"pics/\"picsi/g' /private/tmp/Taipan/Taipan.html")
-        
-            //  Amber
+            do {
+                var contents = try String(contentsOfFile: filename)
+                contents = contents.replacingOccurrences(of: "000000", with: "000001")
+                contents = contents.replacingOccurrences(of: "0f0", with: "000000")
+                contents = contents.replacingOccurrences(of: "000001", with: "0f0")
+                contents = contents.replacingOccurrences(of: "pics\\/dm", with: "picsi\\/dm")
+                contents = contents.replacingOccurrences(of: "\"pics", with: "\"picsi")
+                try contents.write(toFile: filename, atomically: false, encoding: String.Encoding.utf8)
+            } catch {
+                return
+            }
         } else if colorcheck == "Amber" || colorcheck == "Bernstein" {
-            shell(cmd: "sed -ib -e 's/0f0/ffb000/g' -e 's/\"pics/\"picsamb/g' /private/tmp/Taipan/Taipan.html")
-        
-            //  Amber inverse
+            do {
+                var contents = try String(contentsOfFile: filename)
+                contents = contents.replacingOccurrences(of: "0f0", with: "ffb000")
+                contents = contents.replacingOccurrences(of: "\"pics", with: "\"picsamb")
+                try contents.write(toFile: filename, atomically: false, encoding: String.Encoding.utf8)
+            } catch {
+                return
+            }
         } else if colorcheck == "Amber inverse" || colorcheck == "Bernstein invers" {
-            shell(cmd: "sed -ib -e 's/000000/ffb000/g' -e 's/0f0/000000/g' -e 's/pics\\/dm/picsambi\\/dm/g' -e 's/\"pics/\"picsambi/g' /private/tmp/Taipan/Taipan.html")
-        
-            //  B/W
+            do {
+                var contents = try String(contentsOfFile: filename)
+                contents = contents.replacingOccurrences(of: "000000", with: "ffb000")
+                contents = contents.replacingOccurrences(of: "0f0", with: "000000")
+                contents = contents.replacingOccurrences(of: "pics\\/dm", with: "picsambi\\/dm")
+                contents = contents.replacingOccurrences(of: "\"pics", with: "\"picsambi")
+                try contents.write(toFile: filename, atomically: false, encoding: String.Encoding.utf8)
+            } catch {
+                return
+            }
         } else if colorcheck == "B/W" || colorcheck == "S/W" {
-            shell(cmd: "sed -ib -e 's/0f0/fff/g' -e 's/\"pics/\"picsbw/g' /private/tmp/Taipan/Taipan.html")
-        
-            //  B/W inverse
+            do {
+                var contents = try String(contentsOfFile: filename)
+                contents = contents.replacingOccurrences(of: "0f0", with: "fff")
+                contents = contents.replacingOccurrences(of: "\"pics", with: "\"picsbw")
+                try contents.write(toFile: filename, atomically: false, encoding: String.Encoding.utf8)
+            } catch {
+                return
+            }
         } else if colorcheck == "B/W invers" || colorcheck == "S/W invers" {
-            shell(cmd: "sed -ib -e 's/000000/ffffff/g' -e 's/0f0/000000/g' -e 's/background-color: #000000/background-color: #cccccc/g' -e 's/\"pics/\"picsbwi/g' -e 's/pics\\/dm/picsbwi\\/dm/g' /private/tmp/Taipan/Taipan.html")
+            do {
+                var contents = try String(contentsOfFile: filename)
+                contents = contents.replacingOccurrences(of: "000000", with: "ffffff")
+                contents = contents.replacingOccurrences(of: "0f0", with: "000000")
+                contents = contents.replacingOccurrences(of: "background-color: #000000", with: "background-color: #cccccc")
+                contents = contents.replacingOccurrences(of: "pics\\/dm", with: "picsbwi\\/dm")
+                contents = contents.replacingOccurrences(of: "\"pics", with: "\"picsbwi")
+                try contents.write(toFile: filename, atomically: false, encoding: String.Encoding.utf8)
+            } catch {
+                return
+            }
         }
-
+        
         let configuration = WKWebViewConfiguration()
         myWebView = WKWebView(frame: .zero, configuration: configuration)
         myWebView.translatesAutoresizingMaskIntoConstraints = false
