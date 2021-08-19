@@ -84,20 +84,6 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
             shell(cmd: "sed -ib 's/\"pics/\"picsbwi/g' /private/tmp/Taipan/Taipan.html")
             shell(cmd: "sed -ib 's/pics\\/dm/picsbwi\\/dm/g' /private/tmp/Taipan/Taipan.html")
         }
-        
-        
-        let alert_check = UserDefaults.standard.bool(forKey: "AlertShown")
-        if alert_check == false {
-        let alert = NSAlert()
-        alert.messageText = NSLocalizedString("Important!", comment: "")
-        alert.informativeText = NSLocalizedString("Before entering you company name click on the input window first to active it.", comment: "")
-        alert.alertStyle = .warning
-        alert.icon = NSImage(named: "applied")
-        let Button = NSLocalizedString("I understand", comment: "")
-        alert.addButton(withTitle: Button)
-        alert.runModal()
-        UserDefaults.standard.set(true, forKey: "AlertShown")
-        }
 
         let configuration = WKWebViewConfiguration()
         myWebView = WKWebView(frame: .zero, configuration: configuration)
