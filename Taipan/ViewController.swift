@@ -53,9 +53,9 @@ class ViewController: NSViewController {
      }
     
     @IBAction func start_game(_ sender: Any) {
-        let url = Bundle.main.url(forResource: "gong", withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
+        //let url = Bundle.main.url(forResource: "gong", withExtension: "mp3")
+        //player = try! AVAudioPlayer(contentsOf: url!)
+        //player.play()
         title_picture.isHidden = true
         start_button.title = NSLocalizedString("Reset", comment: "")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.start_game])
