@@ -176,6 +176,11 @@
                                     </subviews>
                                 </view>
                             </box>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNw-dz-kps" userLabel="CRT">
+                                <rect key="frame" x="16" y="14" width="617" height="607"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="crt" id="nnL-dT-eZh"/>
+                            </imageView>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L5H-67-SvN" userLabel="Controls">
                                 <rect key="frame" x="6" y="641" width="637" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -349,6 +354,7 @@
                     </view>
                     <connections>
                         <outlet property="color_selector" destination="gMB-0w-pqt" id="nJR-yo-B40"/>
+                        <outlet property="crt_mask" destination="ZNw-dz-kps" id="hfz-CZ-F1B"/>
                         <outlet property="start_button" destination="HJf-NE-kQ7" id="D8f-VF-zVb"/>
                         <outlet property="taipan_header" destination="MyK-c4-3T4" id="ddi-zx-YDx"/>
                         <outlet property="title_picture" destination="xi2-Of-tBf" id="diM-Wb-o6r"/>
@@ -412,12 +418,13 @@
                 </viewController>
                 <customObject id="nRv-e1-rl5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492.5" y="219"/>
+            <point key="canvasLocation" x="549" y="65"/>
         </scene>
     </scenes>
     <resources>
         <image name="Ship" width="418" height="288"/>
         <image name="Taipan" width="1125" height="1125"/>
         <image name="Title" width="611" height="601"/>
+        <image name="crt" width="611" height="601"/>
     </resources>
 </document>

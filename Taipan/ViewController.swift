@@ -11,6 +11,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var start_button: NSButton!
     @IBOutlet weak var taipan_header: NSTextField!
     @IBOutlet weak var color_selector: NSPopUpButton!
+    @IBOutlet weak var crt_mask: NSImageView!
     
     var player: AVAudioPlayer!
 
