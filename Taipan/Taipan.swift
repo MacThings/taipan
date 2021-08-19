@@ -53,36 +53,23 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         //  Green inverse
         if colorcheck == "Green inverse" || colorcheck == "Grün invers" {
             print("Green inverse")
-            shell(cmd: "sed -ib 's/000000/000001/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/0f0/000000/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/000001/0f0/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/pics\\/dm/picsi\\/dm/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsi/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib -e 's/000000/000001/g' -e 's/0f0/000000/g' -e 's/000001/0f0/g' -e 's/pics\\/dm/picsi\\/dm/g' -e 's/\"pics/\"picsi/g' /private/tmp/Taipan/Taipan.html")
         
             //  Amber
         } else if colorcheck == "Amber" || colorcheck == "Bernstein" {
-            shell(cmd: "sed -ib 's/0f0/ffb000/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsamb/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib -e 's/0f0/ffb000/g' -e 's/\"pics/\"picsamb/g' /private/tmp/Taipan/Taipan.html")
         
             //  Amber inverse
         } else if colorcheck == "Amber inverse" || colorcheck == "Bernstein invers" {
-            shell(cmd: "sed -ib 's/000000/ffb000/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/0f0/000000/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/pics\\/dm/picsambi\\/dm/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsambi/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib -e 's/000000/ffb000/g' -e 's/0f0/000000/g' -e 's/pics\\/dm/picsambi\\/dm/g' -e 's/\"pics/\"picsambi/g' /private/tmp/Taipan/Taipan.html")
         
             //  B/W
         } else if colorcheck == "B/W" || colorcheck == "S/W" {
-            shell(cmd: "sed -ib 's/0f0/fff/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsbw/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib -e 's/0f0/fff/g' -e 's/\"pics/\"picsbw/g' /private/tmp/Taipan/Taipan.html")
         
             //  B/W inverse
         } else if colorcheck == "B/W invers" || colorcheck == "S/W invers" {
-            shell(cmd: "sed -ib 's/000000/ffffff/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/0f0/000000/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/background-color: #000000/background-color: #cccccc/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/\"pics/\"picsbwi/g' /private/tmp/Taipan/Taipan.html")
-            shell(cmd: "sed -ib 's/pics\\/dm/picsbwi\\/dm/g' /private/tmp/Taipan/Taipan.html")
+            shell(cmd: "sed -ib -e 's/000000/ffffff/g' -e 's/0f0/000000/g' -e 's/background-color: #000000/background-color: #cccccc/g' -e 's/\"pics/\"picsbwi/g' -e 's/pics\\/dm/picsbwi\\/dm/g' /private/tmp/Taipan/Taipan.html")
         }
 
         let configuration = WKWebViewConfiguration()
