@@ -1,3 +1,6 @@
+/* Class = "NSMenuItem"; title = "Green inverse"; ObjectID = "0Dv-aC-UJv"; */
+"0Dv-aC-UJv.title" = "Grün invers";
+
 /* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "Taipan";
 
@@ -40,9 +43,6 @@
 /* Class = "NSTextFieldCell"; title = "Language"; ObjectID = "Bxo-hi-3wX"; */
 "Bxo-hi-3wX.title" = "Sprache";
 
-/* Class = "NSButtonCell"; title = "Start game"; ObjectID = "Dfn-p7-c8P"; */
-"Dfn-p7-c8P.title" = "Starte Spiel";
-
 /* Class = "NSTextFieldCell"; title = "A game based on the China trade of the 1800s"; ObjectID = "eCb-kK-4F3"; */
 "eCb-kK-4F3.title" = "Basierend auf chinesischem Handel des 19. Jh.";
 
@@ -51,6 +51,9 @@
 
 /* Class = "NSMenuItem"; title = "Hide Taipan"; ObjectID = "hik-eQ-gnC"; */
 "hik-eQ-gnC.title" = "Taipan ausblenden";
+
+/* Class = "NSMenuItem"; title = "Amber inverse"; ObjectID = "Hv6-zN-gVn"; */
+"Hv6-zN-gVn.title" = "Bernstein invers";
 
 /* Class = "NSWindow"; title = "Taipan"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Taipan";
@@ -91,6 +94,9 @@
 /* Class = "NSTextFieldCell"; title = "Font"; ObjectID = "QWq-qr-6nx"; */
 "QWq-qr-6nx.title" = "Schriftart";
 
+/* Class = "NSMenuItem"; title = "Amber"; ObjectID = "RYp-xJ-stI"; */
+"RYp-xJ-stI.title" = "Bernstein";
+
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "Fenster";
 
@@ -109,6 +115,6 @@
 /* Class = "NSViewController"; title = "Taipan"; ObjectID = "XfG-lQ-9wD"; */
 "XfG-lQ-9wD.title" = "Taipan";
 
-/* Class = "NSMenuItem"; title = "Traditional"; ObjectID = "YkZ-ze-XsZ"; */
+/* Class = "NSMenuItem"; title = "Green"; ObjectID = "YkZ-ze-XsZ"; */
 "YkZ-ze-XsZ.title" = "Grün";
 

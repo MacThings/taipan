@@ -152,17 +152,27 @@
                                 </scroller>
                             </scrollView>
                             <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-Z1-9D3" userLabel="Content">
-                                <rect key="frame" x="6" y="16" width="637" height="617"/>
+                                <rect key="frame" x="6" y="4" width="637" height="629"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="hLz-25-NGA">
-                                    <rect key="frame" x="3" y="3" width="631" height="611"/>
+                                    <rect key="frame" x="3" y="3" width="631" height="623"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-Of-tBf">
-                                            <rect key="frame" x="10" y="12" width="610" height="588"/>
+                                        <box fixedFrame="YES" boxType="custom" borderWidth="4" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="VkR-xs-QNV">
+                                            <rect key="frame" x="7" y="9" width="618" height="608"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Title" id="a7N-fx-De1"/>
-                                        </imageView>
+                                            <view key="contentView" id="djF-dV-eio">
+                                                <rect key="frame" x="4" y="4" width="610" height="600"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-Of-tBf">
+                                                        <rect key="frame" x="0.0" y="-1" width="611" height="601"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Title" id="a7N-fx-De1"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                        </box>
                                     </subviews>
                                 </view>
                             </box>
@@ -408,6 +418,6 @@
     <resources>
         <image name="Ship" width="418" height="288"/>
         <image name="Taipan" width="1125" height="1125"/>
-        <image name="Title" width="628" height="586"/>
+        <image name="Title" width="611" height="601"/>
     </resources>
 </document>
