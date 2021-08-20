@@ -149,26 +149,6 @@
                                                 <action selector="toggle_switch:" target="XfG-lQ-9wD" id="LH8-r2-m79"/>
                                             </connections>
                                         </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3W-dG-G72">
-                                            <rect key="frame" x="734" y="294" width="32" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Reset" id="lDG-ae-YyV">
-                                                <font key="font" metaFont="system" size="10"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-L8-Mez">
-                                            <rect key="frame" x="706" y="291" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="reset-button" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ii9-6k-7I7">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="reset_button:" target="XfG-lQ-9wD" id="kc0-1I-GMn"/>
-                                            </connections>
-                                        </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-xN-aWE">
                                             <rect key="frame" x="12" y="3" width="109" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -379,6 +359,51 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-Rz-MWZ">
+                                            <rect key="frame" x="748" y="313" width="66" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Harddisk Sfx" id="V1f-zA-4gL">
+                                                <font key="font" metaFont="system" size="10"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Juz-Bw-KkM">
+                                            <rect key="frame" x="706" y="310" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="reset-button" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1C2-kW-lRM">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="harddisk_sfx_button:" target="XfG-lQ-9wD" id="8fq-5r-fe7"/>
+                                            </connections>
+                                        </button>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMH-9a-W1f">
+                                            <rect key="frame" x="731" y="309" width="18" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="vSg-G7-E3x"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3W-dG-G72">
+                                            <rect key="frame" x="748" y="279" width="32" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Reset" id="lDG-ae-YyV">
+                                                <font key="font" metaFont="system" size="10"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-L8-Mez">
+                                            <rect key="frame" x="706" y="276" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="reset-button" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ii9-6k-7I7">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="reset_button:" target="XfG-lQ-9wD" id="kc0-1I-GMn"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <color key="borderColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -428,6 +453,7 @@
                         <outlet property="crt_black_screen" destination="Qud-Bc-dYX" id="Iz0-Fe-VEw"/>
                         <outlet property="crt_mask" destination="ZNw-dz-kps" id="hfz-CZ-F1B"/>
                         <outlet property="font_toggle_switch" destination="aYq-KR-Js6" id="Uqe-B8-n5r"/>
+                        <outlet property="harddisk_sfx_led" destination="qMH-9a-W1f" id="8xe-s7-TxX"/>
                         <outlet property="language_toggle_switch" destination="DfC-pV-Esi" id="Dxv-Cg-mJe"/>
                         <outlet property="power_led" destination="ksM-wj-gsv" id="QSJ-8B-DV7"/>
                         <outlet property="reset_button" destination="DRW-L8-Mez" id="Zyc-0O-evj"/>

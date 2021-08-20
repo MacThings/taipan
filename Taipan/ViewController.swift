@@ -24,6 +24,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var scanlines_led: NSImageView!
     @IBOutlet weak var scanlines_button: NSButton!
 
+    @IBOutlet weak var harddisk_sfx_led: NSImageView!
+    
     @IBOutlet weak var reset_button: NSButton!
     
     var player: AVAudioPlayer!
@@ -141,6 +143,19 @@ class ViewController: NSViewController {
             }
         }
         
+        let harddiskfxscheck = UserDefaults.standard.string(forKey: "HarddiskSfx")
+            if harddiskfxscheck == nil {
+                UserDefaults.standard.set(false, forKey: "HarddiskSfx")
+                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+        }
+        
+        let harddiskfxscheck2 = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+            if harddiskfxscheck2 == true {
+                harddisk_sfx_led.image = NSImage(named: "NSStatusAvailable")
+            } else {
+                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+            }
+        
         self.toggle_switch.image = NSImage(named: "switch_off")
         self.font_toggle_switch.image = NSImage(named: "switch_45_2")
         self.power_led.image = NSImage(named: "NSStatusUnavailable")
@@ -164,11 +179,11 @@ class ViewController: NSViewController {
                 self.crt_black_screen.isHidden = true
                 self.container_view.isHidden = false
             }
-            //sound_hd_spin_up()
-            
-            //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(8695)) {
-                //self.sound_hd_running()
-            //}
+
+            let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+            if harddiskfxscheck == true {
+                sound_hd_spin_up()
+            }
         } else {
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
@@ -176,8 +191,10 @@ class ViewController: NSViewController {
             UserDefaults.standard.set(false, forKey: "SwitchOn")
             self.crt_black_screen.isHidden = false
             self.container_view.isHidden = true
-            //sound_hd_spin_down()
-            
+            let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+            if harddiskfxscheck == true {
+                sound_hd_spin_down()
+            }
         }
     }
     
@@ -267,6 +284,19 @@ class ViewController: NSViewController {
         } else {
             crt_mask.isHidden = true
         }
+    }
+    
+    
+    @IBAction func harddisk_sfx_button(_ sender: Any) {
+        sound_click()
+        let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+            if harddiskfxscheck == true {
+                UserDefaults.standard.set(false, forKey: "HarddiskSfx")
+                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+            } else {
+                UserDefaults.standard.set(true, forKey: "HarddiskSfx")
+                harddisk_sfx_led.image = NSImage(named: "NSStatusAvailable")
+            }
     }
     
     @IBAction func reset_button(_ sender: Any) {
