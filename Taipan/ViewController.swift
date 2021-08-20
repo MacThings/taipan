@@ -28,6 +28,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var reset_button: NSButton!
     
     var player: AVAudioPlayer!
+    var player2: AVAudioPlayer!
+    var player3: AVAudioPlayer!
+    var player4: AVAudioPlayer!
+    var player5: AVAudioPlayer!
     
     let lc = Locale.current.languageCode
     
@@ -146,11 +150,11 @@ class ViewController: NSViewController {
     
     @IBAction func toggle_switch(_ sender: Any) {
         let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
-        
         let url = Bundle.main.url(forResource: "switch_sound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
         
         if switchcheck == false {
+            sound_crt_switch_on()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.toggle_switch ?? ""])
             let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
             self.toggle_switch.image = NSImage(named: "switch_on")
@@ -161,13 +165,20 @@ class ViewController: NSViewController {
                 self.crt_black_screen.isHidden = true
                 self.container_view.isHidden = false
             }
+            //sound_hd_spin_up()
+            
+            //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(8695)) {
+                //self.sound_hd_running()
+            //}
         } else {
+            sound_crt_switch_on()
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
             self.toggle_switch.image = NSImage(named: "switch_off")
             UserDefaults.standard.set(false, forKey: "SwitchOn")
             self.crt_black_screen.isHidden = false
             self.container_view.isHidden = true
+            //sound_hd_spin_down()
             
         }
     }
@@ -274,6 +285,29 @@ class ViewController: NSViewController {
         let url = Bundle.main.url(forResource: "click_sound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
+    }
+  
+    func sound_crt_switch_on() {
+        let url = Bundle.main.url(forResource: "crt_switch_on", withExtension: "mp3")
+        player3 = try! AVAudioPlayer(contentsOf: url!)
+        player3.play()
+    }
+   
+    func sound_hd_spin_up() {
+        let url = Bundle.main.url(forResource: "hd_spin_up", withExtension: "mp3")
+        player4 = try! AVAudioPlayer(contentsOf: url!)
+        player4.play()
+    }
+    func sound_hd_running() {
+        let url = Bundle.main.url(forResource: "hd_running", withExtension: "mp3")
+        player4 = try! AVAudioPlayer(contentsOf: url!)
+        player4.play()
+    }
+    
+    func sound_hd_spin_down() {
+        let url = Bundle.main.url(forResource: "hd_spin_down", withExtension: "mp3")
+        player4 = try! AVAudioPlayer(contentsOf: url!)
+        player4.play()
     }
     
 }
