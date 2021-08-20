@@ -8,7 +8,6 @@ import AVFoundation
 class ViewController: NSViewController {
 
     @IBOutlet weak var taipan_header: NSTextField!
-    @IBOutlet weak var color_selector: NSPopUpButton!
     @IBOutlet weak var crt_mask: NSImageView!
     @IBOutlet weak var crt_black_screen: NSBox!
     @IBOutlet weak var container_view: NSView!
@@ -171,7 +170,6 @@ class ViewController: NSViewController {
                 //self.sound_hd_running()
             //}
         } else {
-            sound_crt_switch_on()
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
             self.toggle_switch.image = NSImage(named: "switch_off")
