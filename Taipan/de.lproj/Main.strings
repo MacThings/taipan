@@ -1,11 +1,5 @@
-/* Class = "NSMenuItem"; title = "Green inverse"; ObjectID = "0Dv-aC-UJv"; */
-"0Dv-aC-UJv.title" = "Grün invers";
-
 /* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "Taipan";
-
-/* Class = "NSMenuItem"; title = "B/W"; ObjectID = "3xe-Kj-nXT"; */
-"3xe-Kj-nXT.title" = "S/W";
 
 /* Class = "NSMenuItem"; title = "Quit Taipan"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "Taipan beenden";
@@ -13,23 +7,8 @@
 /* Class = "NSMenuItem"; title = "About Taipan"; ObjectID = "5kV-Vb-QxS"; */
 "5kV-Vb-QxS.title" = "Über Taipan";
 
-/* Class = "NSMenuItem"; title = "2x"; ObjectID = "6Rf-Po-JSw"; */
-"6Rf-Po-JSw.title" = "2x";
-
 /* Class = "NSMenuItem"; title = "Taipan"; ObjectID = "9dp-9n-b1u"; */
 "9dp-9n-b1u.title" = "Taipan";
-
-/* Class = "NSMenuItem"; title = "4x"; ObjectID = "9G9-tn-Fyy"; */
-"9G9-tn-Fyy.title" = "4x";
-
-/* Class = "NSMenuItem"; title = "Traditional"; ObjectID = "aeW-VW-Ln2"; */
-"aeW-VW-Ln2.title" = "Traditionell";
-
-/* Class = "NSMenuItem"; title = "B/W inverse"; ObjectID = "AgT-Wl-UoT"; */
-"AgT-Wl-UoT.title" = "S/W invers";
-
-/* Class = "NSMenuItem"; title = "English"; ObjectID = "atf-5b-ElM"; */
-"atf-5b-ElM.title" = "Englisch";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
 "aUF-d1-5bR.title" = "Window";
@@ -52,17 +31,11 @@
 /* Class = "NSMenuItem"; title = "Hide Taipan"; ObjectID = "hik-eQ-gnC"; */
 "hik-eQ-gnC.title" = "Taipan ausblenden";
 
-/* Class = "NSMenuItem"; title = "Amber inverse"; ObjectID = "Hv6-zN-gVn"; */
-"Hv6-zN-gVn.title" = "Bernstein invers";
-
 /* Class = "NSWindow"; title = "Taipan"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Taipan";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "Alle einblenden";
-
-/* Class = "NSMenuItem"; title = "3x"; ObjectID = "kMs-Ha-SvE"; */
-"kMs-Ha-SvE.title" = "3x";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "L5H-67-SvN"; */
 "L5H-67-SvN.title" = "Box";
@@ -72,9 +45,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Color"; ObjectID = "mhh-15-FGe"; */
 "mhh-15-FGe.title" = "Farbe";
-
-/* Class = "NSMenuItem"; title = "5x"; ObjectID = "Msb-dH-5M1"; */
-"Msb-dH-5M1.title" = "5x";
 
 /* Class = "NSMenuItem"; title = "System"; ObjectID = "Nz1-XS-eLR"; */
 "Nz1-XS-eLR.title" = "System";
@@ -114,7 +84,4 @@
 
 /* Class = "NSViewController"; title = "Taipan"; ObjectID = "XfG-lQ-9wD"; */
 "XfG-lQ-9wD.title" = "Taipan";
-
-/* Class = "NSMenuItem"; title = "Green"; ObjectID = "YkZ-ze-XsZ"; */
-"YkZ-ze-XsZ.title" = "Grün";
 

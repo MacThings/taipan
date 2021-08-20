@@ -35,13 +35,13 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         }
             
         let speedcheck = UserDefaults.standard.string(forKey: "Speed")
-        if speedcheck == "2x"{
+        if speedcheck == "2"{
             shell(cmd: "sed -ib '120s/.*/250/' /private/tmp/Taipan/Taipan.html")
-        } else if speedcheck == "3x"{
+        } else if speedcheck == "3"{
             shell(cmd: "sed -ib '120s/.*/170/' /private/tmp/Taipan/Taipan.html")
-        } else if speedcheck == "4x"{
+        } else if speedcheck == "4"{
             shell(cmd: "sed -ib '120s/.*/125/' /private/tmp/Taipan/Taipan.html")
-        } else if speedcheck == "5x"{
+        } else if speedcheck == "5"{
             shell(cmd: "sed -ib '120s/.*/100/' /private/tmp/Taipan/Taipan.html")
         }
         
@@ -52,7 +52,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         
         let colorcheck = UserDefaults.standard.string(forKey: "Color")
         
-        if colorcheck == "Green inverse" || colorcheck == "Grün invers" {
+        if colorcheck == "Green inv." || colorcheck == "Grün inv." {
             do {
                 var contents = try String(contentsOfFile: filename)
                 contents = contents.replacingOccurrences(of: "000000", with: "000001")
@@ -73,7 +73,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
             } catch {
                 return
             }
-        } else if colorcheck == "Amber inverse" || colorcheck == "Bernstein invers" {
+        } else if colorcheck == "Amber inv." || colorcheck == "Bernstein inv." {
             do {
                 var contents = try String(contentsOfFile: filename)
                 contents = contents.replacingOccurrences(of: "000000", with: "ffb000")
@@ -93,7 +93,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
             } catch {
                 return
             }
-        } else if colorcheck == "B/W invers" || colorcheck == "S/W invers" {
+        } else if colorcheck == "B/W inv." || colorcheck == "S/W inv." {
             do {
                 var contents = try String(contentsOfFile: filename)
                 contents = contents.replacingOccurrences(of: "000000", with: "ffffff")
