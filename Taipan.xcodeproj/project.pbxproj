@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -284,6 +284,9 @@
 		2AA92F4A26CBC63200E87E19 /* dm8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm8.gif; sourceTree = "<group>"; };
 		2AA92F4B26CBC63200E87E19 /* ship.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ship.gif; sourceTree = "<group>"; };
 		2AA92F6926CBD77600E87E19 /* dm0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dm0.gif; sourceTree = "<group>"; };
+		2AE3CCB82BF6060500017BC6 /* running.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = running.m4a; sourceTree = "<group>"; };
+		2AE3CCBA2BF6060500017BC6 /* stop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = stop.m4a; sourceTree = "<group>"; };
+		2AE3CCBB2BF6064800017BC6 /* start.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = start.m4a; sourceTree = "<group>"; };
 		E5FE08561DDDACB100DB19B9 /* Taipan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taipan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FE08591DDDACB100DB19B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5FE085B1DDDACB100DB19B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +452,9 @@
 				E5FE085B1DDDACB100DB19B9 /* ViewController.swift */,
 				E5FE08681DDDAE8600DB19B9 /* Taipan.swift */,
 				2A7CB1DE26CEF3E600B1A97B /* click_sound.mp3 */,
+				2AE3CCB82BF6060500017BC6 /* running.m4a */,
+				2AE3CCBA2BF6060500017BC6 /* stop.m4a */,
+				2AE3CCBB2BF6064800017BC6 /* start.m4a */,
 				2A7CB1E226CFB57F00B1A97B /* crt_switch_on.mp3 */,
 				2A7CB1F526CFF43E00B1A97B /* hd_spin_up.mp3 */,
 				2A7CB1F926CFF4FC00B1A97B /* hd_spin_down.mp3 */,
@@ -484,7 +490,7 @@
 				2A7CB19A26CE6E8600B1A97B /* Copy Taipan Amber inverse */,
 				2A98471A26CD2AC100DDED5E /* Copy Taipan Pics BW */,
 				2A98472F26CD2C4A00DDED5E /* Copy Taipan Pics BW inverse */,
-				2A7CB15A26CADF9D00B1A97B /* Zip and send to homeshare */,
+				2AE3CCB72BF6000E00017BC6 /* Prepare Publishing */,
 			);
 			buildRules = (
 			);
@@ -504,8 +510,9 @@
 		E5FE084E1DDDACB100DB19B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = "Sascha Lamprecht";
 				TargetAttributes = {
 					E5FE08551DDDACB100DB19B9 = {
@@ -515,7 +522,7 @@
 				};
 			};
 			buildConfigurationList = E5FE08511DDDACB100DB19B9 /* Build configuration list for PBXProject "Taipan" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -558,7 +565,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A7CB15A26CADF9D00B1A97B /* Zip and send to homeshare */ = {
+		2AE3CCB72BF6000E00017BC6 /* Prepare Publishing */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -567,14 +574,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Zip and send to homeshare";
+			name = "Prepare Publishing";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfind \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"/Contents/Resources -type d -name \"Sparkle.framework\" -exec rm -r \"{}\" \\;\nrm -r /Applications/\"${PRODUCT_NAME}.app\"\ncp -r \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Applications/\nnewname=$( echo \"${PRODUCT_NAME}\" |tr '[:upper:]' '[:lower:]' |sed -e 's/\\ //g' -e 's/-//g' )\nif [ -d /Volumes/Homeshare/Xcode/$newname ]; then\n    cp \"/Users/luigi/Documents/Xcode/$newname/${PRODUCT_NAME}/$newname.html\" \"/Volumes/Homeshare/Xcode/$newname/upload/$newname.html\"\n    rm /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip 2> /dev/null\n    cd /Applications\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" /Volumes/Homeshare/Xcode/$newname/upload/$newname.zip\n    ditto -c -k --sequesterRsrc --keepParent \"${PRODUCT_NAME}.app\" ~/Desktop/\"${PRODUCT_NAME} ${MARKETING_VERSION}.zip\"\nfi\n";
+			shellScript = "#!/bin/bash\n\nSYS_USER=$(id -un)\n\nif [ -d \"/Volumes/Homeshare/Xcode/taipan/upload\" ]; then\n    cp \"/Users/$SYS_USER/Documents/Xcode/taipan/taipan.html\" \"/Volumes/Homeshare/Xcode/taipan/upload/\"\n  \n    codesign --force --deep --sign - \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Volumes/Homeshare/Xcode/taipan/upload/taipan.zip\"\n\nfi\n\nif [ -d \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\" ]; then\n    rm -r \"/Users/$SYS_USER/Desktop/${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app\" \"/Users/$SYS_USER/Desktop/.\"\ncodesign --force --deep --sign - /Users/$SYS_USER/Desktop/\"${PRODUCT_NAME}.app\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -737,15 +744,16 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Taipan/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = taipan.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -760,15 +768,16 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Taipan/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = taipan.slsoft.de;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -805,7 +814,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.26.0;
+				minimumVersion = 2.6.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
