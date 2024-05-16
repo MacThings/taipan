@@ -295,9 +295,11 @@ class ViewController: NSViewController {
             if harddiskfxscheck == true {
                 UserDefaults.standard.set(false, forKey: "HarddiskSfx")
                 harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+                switch_off_hd_sound()
             } else {
                 UserDefaults.standard.set(true, forKey: "HarddiskSfx")
                 harddisk_sfx_led.image = NSImage(named: "NSStatusAvailable")
+                switch_on_hd_sound()
             }
     }
     
@@ -356,7 +358,6 @@ class ViewController: NSViewController {
                     
                     // Führe die Funktion im Hauptthread aus, um Änderungen an der Benutzeroberfläche durchzuführen
                     DispatchQueue.main.async {
-                        print("go")
                         self.sound_hd_running()
                     }
                 }
@@ -372,6 +373,24 @@ class ViewController: NSViewController {
         let url = Bundle.main.url(forResource: "hd_stop", withExtension: "m4a")
         player6 = try! AVAudioPlayer(contentsOf: url!)
         player6.play()
+    }
+    
+    func switch_off_hd_sound() {
+        do {
+                try player4.stop()
+                try player5.stop()
+            } catch {
+                print("Fehler beim Ausschalten des Sounds: \(error)")
+            }
+    }
+    
+    func switch_on_hd_sound() {
+        do {
+                try player4.play()
+                try player5.play()
+            } catch {
+                print("Fehler beim Ausschalten des Sounds: \(error)")
+            }
     }
     
 }
