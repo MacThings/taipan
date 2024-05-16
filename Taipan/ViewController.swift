@@ -33,6 +33,7 @@ class ViewController: NSViewController {
     var player3: AVAudioPlayer!
     var player4: AVAudioPlayer!
     var player5: AVAudioPlayer!
+    var player6: AVAudioPlayer!
     
     let lc = Locale.current.languageCode
     
@@ -183,6 +184,7 @@ class ViewController: NSViewController {
             let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck == true {
                 sound_hd_spin_up()
+                startLoop()
             }
         } else {
             player.play()
@@ -322,20 +324,54 @@ class ViewController: NSViewController {
     }
    
     func sound_hd_spin_up() {
-        let url = Bundle.main.url(forResource: "hd_spin_up", withExtension: "mp3")
+        player5?.stop()
+        let url = Bundle.main.url(forResource: "hd_start", withExtension: "m4a")
         player4 = try! AVAudioPlayer(contentsOf: url!)
-        player4.play()
+        player4?.play()
+        
+        // Preloading der sound_hd_running Funktion
+        preloadSound_hd_running()
     }
+
     func sound_hd_running() {
-        let url = Bundle.main.url(forResource: "hd_running", withExtension: "mp3")
-        player4 = try! AVAudioPlayer(contentsOf: url!)
-        player4.play()
+        player5?.play()
     }
-    
+
+    // Preloading der sound_hd_running Funktion
+    func preloadSound_hd_running() {
+        let url = Bundle.main.url(forResource: "hd_running", withExtension: "m4a")
+        player5 = try! AVAudioPlayer(contentsOf: url!)
+        player5?.prepareToPlay()
+    }
+
+    // Schleife für wiederholtes Abspielen der sound_hd_running Funktion
+    func startLoop() {
+        // Starte einen Timer, der nach 116 Sekunden abläuft
+        DispatchQueue.global().asyncAfter(deadline: .now() + 73) {
+            // Starte die Schleife nach Ablauf des Timers
+            DispatchQueue.global().async {
+                while true {
+                    // Warte für eine Weile, bevor die Funktion wieder aufgerufen wird
+                    Thread.sleep(forTimeInterval: 43) // Ändere die Zeitintervall nach Bedarf
+                    
+                    // Führe die Funktion im Hauptthread aus, um Änderungen an der Benutzeroberfläche durchzuführen
+                    DispatchQueue.main.async {
+                        print("go")
+                        self.sound_hd_running()
+                    }
+                }
+            }
+        }
+    }
+
     func sound_hd_spin_down() {
-        let url = Bundle.main.url(forResource: "hd_spin_down", withExtension: "mp3")
-        player4 = try! AVAudioPlayer(contentsOf: url!)
-        player4.play()
+        player4.stop()
+        player5.stop()
+        player4.currentTime = 0
+        player5.currentTime = 0
+        let url = Bundle.main.url(forResource: "hd_stop", withExtension: "m4a")
+        player6 = try! AVAudioPlayer(contentsOf: url!)
+        player6.play()
     }
     
 }
