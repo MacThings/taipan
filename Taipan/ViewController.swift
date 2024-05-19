@@ -290,8 +290,6 @@ class ViewController: NSViewController {
         }
     }
     
-    
-    
     func sound_click() {
         let url = Bundle.main.url(forResource: "click_sound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
@@ -300,29 +298,34 @@ class ViewController: NSViewController {
   
     func sound_crt_switch_on() {
         let url = Bundle.main.url(forResource: "crt_switch_on", withExtension: "mp3")
-        player3 = try! AVAudioPlayer(contentsOf: url!)
-        player3.play()
+        player2 = try! AVAudioPlayer(contentsOf: url!)
+        player2.play()
     }
    
     func sound_hd_spin_up() {
-        player5?.stop()
+        if let player4 = player4 {
+            player4.stop()
+        }
+        if let player5 = player5 {
+            player5.stop()
+        }
         let url = Bundle.main.url(forResource: "hd_start", withExtension: "m4a")
-        player4 = try! AVAudioPlayer(contentsOf: url!)
-        player4?.play()
+        player3 = try! AVAudioPlayer(contentsOf: url!)
+        player3?.play()
         
         // Preloading der sound_hd_running Funktion
         preloadSound_hd_running()
     }
 
     func sound_hd_running() {
-        player5?.play()
+        player4?.play()
     }
 
     // Preloading der sound_hd_running Funktion
     func preloadSound_hd_running() {
         let url = Bundle.main.url(forResource: "hd_running", withExtension: "m4a")
-        player5 = try! AVAudioPlayer(contentsOf: url!)
-        player5?.prepareToPlay()
+        player4 = try! AVAudioPlayer(contentsOf: url!)
+        player4?.prepareToPlay()
     }
 
     // Schleife für wiederholtes Abspielen der sound_hd_running Funktion
@@ -345,50 +348,38 @@ class ViewController: NSViewController {
     }
 
     func sound_hd_spin_down() {
-        player4.stop()
-        player5.stop()
-        player4.currentTime = 0
-        player5.currentTime = 0
+        if let player3 = player3 {
+            player3.volume = 0
+        }
+        if let player4 = player4 {
+            player4.volume = 0
+        }
         let url = Bundle.main.url(forResource: "hd_stop", withExtension: "m4a")
-        player6 = try! AVAudioPlayer(contentsOf: url!)
-        player6.play()
+        player5 = try! AVAudioPlayer(contentsOf: url!)
+        player5.play()
     }
     
     func switch_off_hd_sound() {
-        if let player4 = player4 {
-            player4.stop()
-        } else {
-            print("player4 ist nicht verfügbar.")
+        if let player3 = player3 {
+            player3.volume = 0
         }
-        
+        if let player4 = player4 {
+            player4.volume = 0
+        }
         if let player5 = player5 {
-            player5.stop()
-        } else {
-            print("player5 ist nicht verfügbar.")
+            player5.volume = 0
         }
     }
 
     func switch_on_hd_sound() {
+        if let player3 = player3 {
+            player3.volume = 1.0
+        }
         if let player4 = player4 {
-            let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
-            if harddiskfxscheck == true {
-                sound_hd_spin_up()
-                startLoop()
-                player4.play()
-
-            }
-            } else {
-                print("player4 ist nicht verfügbar.")
-            }
-            
-            if let player5 = player5 {
-                let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
-                if harddiskfxscheck == true {
-                    player5.play()
-                }
-            } else {
-                print("player5 ist nicht verfügbar.")
-            }
+            player4.volume = 1.0
+        }
+        if let player5 = player5 {
+            player5.volume = 1.0
+        }
     }
-    
 }
