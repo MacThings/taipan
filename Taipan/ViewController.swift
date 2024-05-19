@@ -15,15 +15,19 @@ class ViewController: NSViewController {
     @IBOutlet weak var power_led: NSImageView!
     @IBOutlet weak var toggle_switch: NSButton!
     
-    @IBOutlet weak var font_toggle_switch: NSButton!
+    @IBOutlet var font_toggle_switch: NSSlider!
 
-    @IBOutlet weak var language_toggle_switch: NSButton!
+    @IBOutlet var language_toggle_switch: NSSlider!
     
     @IBOutlet weak var color_label: NSTextField!
+    @IBOutlet var color_label_stepper: NSStepper!
     
     @IBOutlet weak var scanlines_led: NSImageView!
     @IBOutlet weak var scanlines_button: NSButton!
-
+    
+    
+    @IBOutlet var harddisk_sfx_button: NSButton!
+    
     @IBOutlet weak var harddisk_sfx_led: NSImageView!
     
     @IBOutlet weak var reset_button: NSButton!
@@ -44,7 +48,7 @@ class ViewController: NSViewController {
 
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
         if fontcheck == nil{
-            UserDefaults.standard.set("Taipan", forKey: "Font")
+            UserDefaults.standard.set("1", forKey: "Font")
         }
         
         let colorsteppercheck = UserDefaults.standard.string(forKey: "ColorStepper")
@@ -74,11 +78,6 @@ class ViewController: NSViewController {
         if speedcheck == nil{
             UserDefaults.standard.set("1", forKey: "Speed")
         }
-        let languagecheck = UserDefaults.standard.string(forKey: "Language")
-        if languagecheck == nil{
-            UserDefaults.standard.set("English", forKey: "Language")
-            self.language_toggle_switch.image = NSImage(named: "switch_45_2")
-        }
         let scanlinescheck = UserDefaults.standard.string(forKey: "Scanlines")
         if scanlinescheck == nil {
             UserDefaults.standard.set(true, forKey: "Scanlines")
@@ -87,25 +86,12 @@ class ViewController: NSViewController {
         let scanlinescheck2 = UserDefaults.standard.bool(forKey: "Scanlines")
         if scanlinescheck2 == true {
             crt_mask.isHidden = false
-            scanlines_led.image = NSImage(named: "NSStatusAvailable")
+            self.scanlines_button.image = NSImage(named: "scanlines_on")
         } else {
             crt_mask.isHidden = true
-            scanlines_led.image = NSImage(named: "NSStatusUnavailable")
+            self.scanlines_button.image = NSImage(named: "scanlines_off")
         }
-        
-        let fontcheck2 = UserDefaults.standard.string(forKey: "Font")
-        if fontcheck2 == "Taipan" {
-            self.font_toggle_switch.image = NSImage(named: "switch_45_2")
-        } else {
-            self.font_toggle_switch.image = NSImage(named: "switch_45_1")
-        }
-        
-        let languagecheck2 = UserDefaults.standard.string(forKey: "Language")
-        if languagecheck2 == "English" {
-            self.language_toggle_switch.image = NSImage(named: "switch_45_2")
-        } else {
-            self.language_toggle_switch.image = NSImage(named: "switch_45_1")
-        }
+    
         
         if colorcheck2 == "6"{
         UserDefaults.standard.set("Green", forKey: "Color")
@@ -147,18 +133,17 @@ class ViewController: NSViewController {
         let harddiskfxscheck = UserDefaults.standard.string(forKey: "HarddiskSfx")
             if harddiskfxscheck == nil {
                 UserDefaults.standard.set(false, forKey: "HarddiskSfx")
-                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+                harddisk_sfx_button.image = NSImage(named: "harddisk_sfx_off")
         }
         
         let harddiskfxscheck2 = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck2 == true {
-                harddisk_sfx_led.image = NSImage(named: "NSStatusAvailable")
+                harddisk_sfx_button.image = NSImage(named: "harddisk_sfx_on")
             } else {
-                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+                harddisk_sfx_button.image = NSImage(named: "harddisk_sfx_off")
             }
         
-        self.toggle_switch.image = NSImage(named: "switch_off")
-        self.font_toggle_switch.image = NSImage(named: "switch_45_2")
+        self.toggle_switch.image = NSImage(named: "power_off")
         self.power_led.image = NSImage(named: "NSStatusUnavailable")
         UserDefaults.standard.set(false, forKey: "SwitchOn")
      }
@@ -172,15 +157,17 @@ class ViewController: NSViewController {
             sound_crt_switch_on()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.toggle_switch ?? ""])
             let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
-            self.toggle_switch.image = NSImage(named: "switch_on")
+            self.toggle_switch.image = NSImage(named: "power_on")
             self.power_led.image = NSImage(named: "NSStatusAvailable")
+            //self.font_toggle_switch.isEnabled = false
+            //self.language_toggle_switch.isEnabled = false
+            //self.color_label_stepper.isEnabled = false
             UserDefaults.standard.set(true, forKey: "SwitchOn")
             if switchcheck == false {
                 player.play()
                 self.crt_black_screen.isHidden = true
                 self.container_view.isHidden = false
             }
-
             let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck == true {
                 sound_hd_spin_up()
@@ -189,7 +176,10 @@ class ViewController: NSViewController {
         } else {
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
-            self.toggle_switch.image = NSImage(named: "switch_off")
+            self.toggle_switch.image = NSImage(named: "power_off")
+            //self.font_toggle_switch.isEnabled = true
+            //self.language_toggle_switch.isEnabled = true
+            //self.color_label_stepper.isEnabled = true
             UserDefaults.standard.set(false, forKey: "SwitchOn")
             self.crt_black_screen.isHidden = false
             self.container_view.isHidden = true
@@ -202,27 +192,16 @@ class ViewController: NSViewController {
     
     @IBAction func font_switch(_ sender: Any) {
         sound_click()
-        let fontcheck = UserDefaults.standard.string(forKey: "Font")
-        if fontcheck == "Taipan" {
-            self.font_toggle_switch.image = NSImage(named: "switch_45_1")
-            UserDefaults.standard.set("System", forKey: "Font")
-        } else {
-            self.font_toggle_switch.image = NSImage(named: "switch_45_2")
-            UserDefaults.standard.set("Taipan", forKey: "Font")
-        }
-        
     }
 
     @IBAction func language_toggle(_ sender: Any) {
         sound_click()
         let languagecheck = UserDefaults.standard.string(forKey: "Language")
-        if languagecheck == "English" {
+        if languagecheck == "2" {
             print("nun de")
-            self.language_toggle_switch.image = NSImage(named: "switch_45_1")
-            UserDefaults.standard.set("German", forKey: "Language")
+            UserDefaults.standard.set("2", forKey: "Language")
         } else {
-            self.language_toggle_switch.image = NSImage(named: "switch_45_2")
-            UserDefaults.standard.set("English", forKey: "Language")
+            UserDefaults.standard.set("1", forKey: "Language")
             print("nun en")
         }
         
@@ -275,10 +254,10 @@ class ViewController: NSViewController {
         let scanlinescheck = UserDefaults.standard.bool(forKey: "Scanlines")
         if scanlinescheck == true {
             UserDefaults.standard.set(false, forKey: "Scanlines")
-            scanlines_led.image = NSImage(named: "NSStatusUnavailable")
+            self.scanlines_button.image = NSImage(named: "scanlines_off")
         } else {
             UserDefaults.standard.set(true, forKey: "Scanlines")
-            scanlines_led.image = NSImage(named: "NSStatusAvailable")
+            self.scanlines_button.image = NSImage(named: "scanlines_on")
         }
         let scanlinescheck2 = UserDefaults.standard.bool(forKey: "Scanlines")
         if scanlinescheck2 == true {
@@ -294,11 +273,11 @@ class ViewController: NSViewController {
         let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck == true {
                 UserDefaults.standard.set(false, forKey: "HarddiskSfx")
-                harddisk_sfx_led.image = NSImage(named: "NSStatusUnavailable")
+                harddisk_sfx_button.image = NSImage(named: "harddisk_sfx_off")
                 switch_off_hd_sound()
             } else {
                 UserDefaults.standard.set(true, forKey: "HarddiskSfx")
-                harddisk_sfx_led.image = NSImage(named: "NSStatusAvailable")
+                harddisk_sfx_button.image = NSImage(named: "harddisk_sfx_on")
                 switch_on_hd_sound()
             }
     }
@@ -376,20 +355,39 @@ class ViewController: NSViewController {
     }
     
     func switch_off_hd_sound() {
-        do {
-                try player4.stop()
-                try player5.stop()
-            } catch {
-                print("Fehler beim Ausschalten des Sounds: \(error)")
-            }
+        if let player4 = player4 {
+            player4.stop()
+        } else {
+            print("player4 ist nicht verfügbar.")
+        }
+        
+        if let player5 = player5 {
+            player5.stop()
+        } else {
+            print("player5 ist nicht verfügbar.")
+        }
     }
-    
+
     func switch_on_hd_sound() {
-        do {
-                try player4.play()
-                try player5.play()
-            } catch {
-                print("Fehler beim Ausschalten des Sounds: \(error)")
+        if let player4 = player4 {
+            let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+            if harddiskfxscheck == true {
+                sound_hd_spin_up()
+                startLoop()
+                player4.play()
+
+            }
+            } else {
+                print("player4 ist nicht verfügbar.")
+            }
+            
+            if let player5 = player5 {
+                let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
+                if harddiskfxscheck == true {
+                    player5.play()
+                }
+            } else {
+                print("player5 ist nicht verfügbar.")
             }
     }
     

@@ -28,7 +28,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         shell(cmd: "cp -rf " + LaunchPath + "/Contents/Resources/Taipan /private/tmp/")
         
         let languagecheck = UserDefaults.standard.string(forKey: "Language")
-        if languagecheck!.contains("Engl") {
+        if languagecheck == "1" {
             print("")
         } else {
             shell(cmd: "rm /private/tmp/Taipan/Taipan.html; mv /private/tmp/Taipan/Taipan_DE.html /private/tmp/Taipan/Taipan.html")
@@ -46,7 +46,7 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
         }
         
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
-        if fontcheck == "System"{
+        if fontcheck == "2"{
             shell(cmd: "sed -ib '9d;10d;58d' /private/tmp/Taipan/Taipan.html")
         }
         
