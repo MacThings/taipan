@@ -155,13 +155,12 @@ class ViewController: NSViewController {
         
         if switchcheck == false {
             sound_crt_switch_on()
+            sound_hd_spin_up()
+            startLoop()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.toggle_switch ?? ""])
             let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
             self.toggle_switch.image = NSImage(named: "power_on")
             self.power_led.image = NSImage(named: "NSStatusAvailable")
-            //self.font_toggle_switch.isEnabled = false
-            //self.language_toggle_switch.isEnabled = false
-            //self.color_label_stepper.isEnabled = false
             UserDefaults.standard.set(true, forKey: "SwitchOn")
             if switchcheck == false {
                 player.play()
@@ -170,21 +169,28 @@ class ViewController: NSViewController {
             }
             let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck == true {
-                sound_hd_spin_up()
-                startLoop()
+                if let player3 = player3 {
+                    player3.volume = 1.0
+                }
+                if let player4 = player4 {
+                    player4.volume = 1.0
+                }
             }
         } else {
             player.play()
             self.power_led.image = NSImage(named: "NSStatusUnavailable")
             self.toggle_switch.image = NSImage(named: "power_off")
-            //self.font_toggle_switch.isEnabled = true
-            //self.language_toggle_switch.isEnabled = true
-            //self.color_label_stepper.isEnabled = true
             UserDefaults.standard.set(false, forKey: "SwitchOn")
             self.crt_black_screen.isHidden = false
             self.container_view.isHidden = true
             let harddiskfxscheck = UserDefaults.standard.bool(forKey: "HarddiskSfx")
             if harddiskfxscheck == true {
+                if let player3 = player3 {
+                    player3.volume = 0
+                }
+                if let player4 = player4 {
+                    player4.volume = 0
+                }
                 sound_hd_spin_down()
             }
         }
@@ -305,24 +311,20 @@ class ViewController: NSViewController {
     func sound_hd_spin_up() {
         if let player4 = player4 {
             player4.stop()
+            player4.currentTime = 0
         }
         if let player5 = player5 {
             player5.stop()
+            player5.currentTime = 0
         }
         let url = Bundle.main.url(forResource: "hd_start", withExtension: "m4a")
         player3 = try! AVAudioPlayer(contentsOf: url!)
         player3?.play()
         
-        // Preloading der sound_hd_running Funktion
-        preloadSound_hd_running()
+        preload_Sound_hd_running()
     }
 
-    func sound_hd_running() {
-        player4?.play()
-    }
-
-    // Preloading der sound_hd_running Funktion
-    func preloadSound_hd_running() {
+    func preload_Sound_hd_running() {
         let url = Bundle.main.url(forResource: "hd_running", withExtension: "m4a")
         player4 = try! AVAudioPlayer(contentsOf: url!)
         player4?.prepareToPlay()
@@ -340,7 +342,7 @@ class ViewController: NSViewController {
                     
                     // Führe die Funktion im Hauptthread aus, um Änderungen an der Benutzeroberfläche durchzuführen
                     DispatchQueue.main.async {
-                        self.sound_hd_running()
+                        self.player4?.play()
                     }
                 }
             }
@@ -349,10 +351,12 @@ class ViewController: NSViewController {
 
     func sound_hd_spin_down() {
         if let player3 = player3 {
-            player3.volume = 0
+            player3.stop()
+            player3.currentTime = 0
         }
         if let player4 = player4 {
-            player4.volume = 0
+            player4.stop()
+            player4.currentTime = 0
         }
         let url = Bundle.main.url(forResource: "hd_stop", withExtension: "m4a")
         player5 = try! AVAudioPlayer(contentsOf: url!)
