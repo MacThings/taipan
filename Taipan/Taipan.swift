@@ -43,6 +43,8 @@ class Taipan: NSViewController, WKUIDelegate, WKNavigationDelegate {
             shell(cmd: "sed -ib '120s/.*/125/' /private/tmp/Taipan/Taipan.html")
         } else if speedcheck == "5"{
             shell(cmd: "sed -ib '120s/.*/100/' /private/tmp/Taipan/Taipan.html")
+        } else if speedcheck == "6"{
+            shell(cmd: "sed -ib '120s/.*/75/' /private/tmp/Taipan/Taipan.html")
         }
         
         let fontcheck = UserDefaults.standard.string(forKey: "Font")
