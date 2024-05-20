@@ -152,11 +152,17 @@ class ViewController: NSViewController {
         let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
         let url = Bundle.main.url(forResource: "switch_sound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
+        sound_hd_spin_up()
+        startLoop()
+        if let player3 = player3 {
+            player3.volume = 0.0
+        }
+        if let player4 = player4 {
+            player4.volume = 0.0
+        }
         
         if switchcheck == false {
             sound_crt_switch_on()
-            sound_hd_spin_up()
-            startLoop()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Startbutton"), object: nil, userInfo: ["name" : self.toggle_switch ?? ""])
             let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
             self.toggle_switch.image = NSImage(named: "power_on")
@@ -187,9 +193,11 @@ class ViewController: NSViewController {
             if harddiskfxscheck == true {
                 if let player3 = player3 {
                     player3.volume = 0
+                    player3.currentTime = 0
                 }
                 if let player4 = player4 {
                     player4.volume = 0
+                    player4.currentTime = 0
                 }
                 sound_hd_spin_down()
             }
@@ -322,6 +330,7 @@ class ViewController: NSViewController {
         player3?.play()
         
         preload_Sound_hd_running()
+        startLoop()
     }
 
     func preload_Sound_hd_running() {
@@ -333,13 +342,13 @@ class ViewController: NSViewController {
     // Schleife für wiederholtes Abspielen der sound_hd_running Funktion
     func startLoop() {
         // Starte einen Timer, der nach 116 Sekunden abläuft
-        DispatchQueue.global().asyncAfter(deadline: .now() + 73) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 75) {
             // Starte die Schleife nach Ablauf des Timers
             DispatchQueue.global().async {
                 while true {
                     // Warte für eine Weile, bevor die Funktion wieder aufgerufen wird
                     Thread.sleep(forTimeInterval: 43) // Ändere die Zeitintervall nach Bedarf
-                    
+                    self.player4.currentTime = 0
                     // Führe die Funktion im Hauptthread aus, um Änderungen an der Benutzeroberfläche durchzuführen
                     DispatchQueue.main.async {
                         self.player4?.play()
@@ -364,26 +373,32 @@ class ViewController: NSViewController {
     }
     
     func switch_off_hd_sound() {
-        if let player3 = player3 {
-            player3.volume = 0
-        }
-        if let player4 = player4 {
-            player4.volume = 0
-        }
-        if let player5 = player5 {
-            player5.volume = 0
+        let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
+        if switchcheck == true {
+            if let player3 = player3 {
+                player3.volume = 0
+            }
+            if let player4 = player4 {
+                player4.volume = 0
+            }
+            if let player5 = player5 {
+                player5.volume = 0
+            }
         }
     }
 
     func switch_on_hd_sound() {
-        if let player3 = player3 {
-            player3.volume = 1.0
-        }
-        if let player4 = player4 {
-            player4.volume = 1.0
-        }
-        if let player5 = player5 {
-            player5.volume = 1.0
+        let switchcheck = UserDefaults.standard.bool(forKey: "SwitchOn")
+        if switchcheck == true {
+            if let player3 = player3 {
+                player3.volume = 1.0
+            }
+            if let player4 = player4 {
+                player4.volume = 1.0
+            }
+            if let player5 = player5 {
+                player5.volume = 1.0
+            }
         }
     }
 }
