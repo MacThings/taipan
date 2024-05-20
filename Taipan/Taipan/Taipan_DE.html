@@ -539,8 +539,8 @@ goto=1030;elements["S3"].style.display="none";elements["S3b"].innerHTML="";eleme
 case 20000:
 WW=CA+BA-DW;
 elements["CAf"].innerHTML=fnFC(WW);elements["SCf"].innerHTML=SC;elements["GNf"].innerHTML=GN;
-YEARSf=Mf(TI/12);elements["YEARSf"].innerHTML=YEARSf+" year";if(YEARSf!=1){elements["YEARSf"].innerHTML+="s";}
-MONTHSf=TI-(YEARSf*12);elements["MONTHSf"].innerHTML=MONTHSf+" month";if(MONTHSf!=1){elements["MONTHSf"].innerHTML+="s";}
+YEARSf=Mf(TI/12);elements["YEARSf"].innerHTML=YEARSf+" Jahr";if(YEARSf!=1){elements["YEARSf"].innerHTML+="e";}
+MONTHSf=TI-(YEARSf*12);elements["MONTHSf"].innerHTML=MONTHSf+" Monat";if(MONTHSf!=1){elements["MONTHSf"].innerHTML+="e";}
 WW=Mf((CA+BA-DW)/100/Mp(TI,1.1));elements["SCOREf"].innerHTML=WW;
 if(WW<500){elements["SCORE1f"].className="inverse";}else if(WW<1000){elements["SCORE2f"].className="inverse";}else if(WW<8000){elements["SCORE3f"].className="inverse";}else if(WW<50000){elements["SCORE4f"].className="inverse";}else{elements["SCORE5f"].className="inverse";}
 elements["S4"].style.display="none";elements["S5"].style.display="none";elements["S6"].style.display="block";
@@ -688,7 +688,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 	<div id="S6">
 		<span class="cap">D</span>ein endgültiger Status:
 		<br /><br />
-		<span class="cap">N</span>et <span class="cap">B</span>argeld: <span id="CAf">0</span>
+		<span class="cap">N</span>etto <span class="cap">B</span>argeld: <span id="CAf">0</span>
 		<br /><br />
 		<span class="cap">S</span>chiffsgröße: <span id="SCf">0</span> Einheiten mit <span id="GNf">0</span> Kanonen
 		<br /><br />
@@ -739,7 +739,7 @@ elements["S4"].style.display="none";elements["S5"].style.display="none";elements
 				</td>
 			</tr>
 		</table></div>
-		<span class="cap">K</span>licke Spiel neustarten um eine neue Runde zu spielen.
+		<span class="cap">K</span>licke Reset um eine neue Runde zu spielen.
 		<br /><br />
 	</div>
 </div>

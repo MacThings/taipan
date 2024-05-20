@@ -22,13 +22,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var color_label: NSTextField!
     @IBOutlet var color_label_stepper: NSStepper!
     
-    @IBOutlet weak var scanlines_led: NSImageView!
     @IBOutlet weak var scanlines_button: NSButton!
     
-    
     @IBOutlet var harddisk_sfx_button: NSButton!
-    
-    @IBOutlet weak var harddisk_sfx_led: NSImageView!
     
     @IBOutlet weak var reset_button: NSButton!
     
